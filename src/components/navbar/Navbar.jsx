@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top mb-3" id="navbar">
-                <div className="container-fluid">
+                <div className="container-fluid px-3">
                     <a className="navbar-brand" href="#">
                         <img
                             src={logoL2}
@@ -26,7 +26,7 @@ const Navbar = () => {
                         />
                     </a>
                     <button
-                        className="navbar-toggler"
+                        className="navbar-toggler me-3"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown"
@@ -42,7 +42,7 @@ const Navbar = () => {
                         className="collapse navbar-collapse"
                         id="navbarNavDropdown"
                     >
-                        <ul class="navbar-nav justify-content-end">
+                        <ul className="navbar-nav justify-content-end">
                             <li className="nav-item">
                                 <a
                                     className="nav-link active"
@@ -53,16 +53,16 @@ const Navbar = () => {
                                 >
                                     <FontAwesomeIcon
                                         icon={faHome}
-                                        color="#f78324"
                                     />
+                                <span className="text-capitalize px-3">home</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#about">
                                     <FontAwesomeIcon
                                         icon={faUser}
-                                        color="#f78324"
                                     />
+                                    <span className="text-capitalize px-3">about me</span>
                                 </a>
                             </li>
                             
@@ -70,16 +70,16 @@ const Navbar = () => {
                                 <a className="nav-link" href="#skills">
                                     <FontAwesomeIcon
                                         icon={faScrewdriverWrench}
-                                        color="#f78324"
                                     />
+                                    <span className="text-capitalize px-3">skills</span>
                                 </a>
                             </li>
-                            <li classname="nav-item">
+                            <li className="nav-item">
                                 <a className="nav-link" href="#projects">
                                     <FontAwesomeIcon
                                         icon={faFolderOpen}
-                                        color="#f78324"
                                     />
+                                    <span className="text-capitalize px-3">projects</span>
                                 </a>
                             </li>
                         </ul>

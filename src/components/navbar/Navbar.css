@@ -1,8 +1,18 @@
 :root {
-    --dark-blue: #040f16 ;
+    --dark-blue: #040F16;
     --orange-color:#f78324; 
     --light-blue: #0fe5ec;
     --light-blue-transparent: #0fe5ec31;
+    --transition: all 0.3s ease-out;
+}
+
+/**todo: animation logo */
+.navbar-brand {
+    width: 6rem;
+    border: 1px solid var(--light-blue);
+    border-radius: 60% 30%;
+    padding: 0.5rem;
+    margin-left: 1rem;
 }
 
 .logo-brand {
@@ -17,6 +27,32 @@
 .navbar-collapse {
     background-color: var(--light-blue-transparent);
     border-radius: 0.5rem;
-    padding-left: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
     filter: contrast(1.1);
+}
+
+.nav-link{
+    color: var(--orange-color) !important;
+}
+
+.nav-link:hover {
+    color: var(--light-blue) !important;
+}
+
+
+@media screen and (min-width:992px){
+    .navbar {
+        padding: 0 2rem;
+    }
+    
+    .navbar-expand-lg .navbar-collapse {
+        justify-content: end;
+        background-color:inherit;
+    }
+
+    .nav-link {
+        font-size: 1.3rem;
+    }
+
 }
