@@ -1,0 +1,22 @@
+:root {
+    --dark-blue: #040f16 ;
+    --orange-color:#f78324; 
+    --light-blue: #0fe5ec;
+    --light-blue-transparent: #0fe5ec31;
+}
+
+.logo-brand {
+    width: 5rem;
+    padding-bottom: 0.8rem;
+}
+
+.navbar-toggler {
+    border-color: var(--orange-color) !important;
+}
+
+.navbar-collapse {
+    background-color: var(--light-blue-transparent);
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    filter: contrast(1.1);
+}
