@@ -1,14 +1,12 @@
 .logo-container {
     display: flex;
-    justify-content: center;
     align-items: center;
     z-index: 0;
-    width: 65rem;
-    height: 65rem;
+    width: 20rem;
+    height: 20rem;
     position: absolute;
-    right: 15rem;
+    right: 5rem;
     bottom: 10;
-
 
     svg {
         width: 100%;
@@ -54,7 +52,6 @@
     animation: dash 5s linear ;
 }
 
-
 @keyframes dash {
     from {
       stroke-dashoffset: 3000;
@@ -65,13 +62,9 @@
 }
 
 
-@media screen and (max-width: 1200px) {}
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 767px) {
   .logo-container {
     display:none;
-
-
     svg {
         width: 100%;
         height: auto;

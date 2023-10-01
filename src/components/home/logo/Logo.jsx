@@ -1,36 +1,23 @@
-import React from 'react';
-import LogoL from '../../../assets/images/woman_coding.png'
-import './Logo.scss'
-
-
+import React from "react";
+import LogoL from "../../../assets/images/woman_coding.png";
+import "./Logo.scss";
 
 const Logo = () => {
- 
-  return (
-    <>
-
-    <div className='logo-container' >
-      <img 
-           
-          className='solid-logo' 
-          src={LogoL} 
-          alt='imagen' 
-      />
-      <svg 
-          version="1.1" 
-          id="Layer_1" 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="100%" 
-          viewBox="0 0 626 399" 
-          enableBackground="new 0 0 626 399"  
-      >
-        <g
-          className="svg-container"
-          transform=''
-          fill="none" 
-        >
-            <path
-              d="M349.541443,370.938538 
+    return (
+        <>
+            <div className="logo-container">
+                <img className="solid-logo" src={LogoL} alt="imagen" />
+                <svg
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100%"
+                    viewBox="0 0 626 399"
+                    enableBackground="new 0 0 626 399"
+                >
+                    <g className="svg-container" transform="" fill="none">
+                        <path
+                            d="M349.541443,370.938538 
                 C349.734192,370.630829 349.926910,370.323120 350.033966,370.074677 
                 C350.033966,370.074677 350.089813,370.162628 350.854797,370.445007 
                 C352.464355,377.572693 348.110657,382.570587 343.474915,388.842773 
@@ -227,12 +214,13 @@ const Logo = () => {
                 C240.090424,110.915611 240.689972,110.920113 241.289520,110.924606 
                 C241.403839,108.351845 241.712997,105.767799 241.564926,103.210220 
                 C241.463974,101.466537 240.723938,99.759850 239.490875,98.105499 
-              z"/>
-          </g>
-      </svg>
-    </div>
-    </>
-  )
-}
+              z"
+                        />
+                    </g>
+                </svg>
+            </div>
+        </>
+    );
+};
 
-export default Logo
+export default Logo;

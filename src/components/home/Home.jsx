@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import Logo from "../home/logo/Logo";
-import LogoTitle from "../../assets/images/logo-L2-rem.png";
+import logoTitle from "../../assets/images/logo-L2-rem.png";
 import "./Home.css";
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
         <section id="home" className="home-page">
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3 my-3">
-                    <div className="col">
+                    <div className="col ps-5">
                         <div className="card-body">
                             <h1 className="card-title">
                                 <span className={letterClass}>H</span>
@@ -28,7 +28,10 @@ const Home = () => {
                                 <br />
                                 <span className={`${letterClass} _13`}>I</span>
                                 <span className={`${letterClass} _14`}>m</span>
-                                <img src={LogoTitle} alt="Logo de L" />
+                                <img 
+                                    src={logoTitle} 
+                                    alt="Logo de L" 
+                                />
                                 <AnimatedLetters
                                     letterClass={letterClass}
                                     strArray={nameArray}
@@ -53,7 +56,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="col ">
                         <Logo />
                     </div>
                 </div>

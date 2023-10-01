@@ -27,26 +27,21 @@
 
 .navbar-toggler {
     border-color: var(--orange-color) !important;
-    transition: var(--transition);
+
 }
 
 .navbar-toggler:active{
-    transform: scale(0.79);
+    scale: 0.79;
 }
 
 .navbar-collapse {
     background-color: var(--middle-blue);
     border-radius: 0.5rem;
-    margin-top: 1rem;
     padding-left: 1rem;
-    padding: 3rem 0.5rem;
-    height: 65vh;
+    padding: 0 2rem;
 }
 
-.nav-item {
-    text-align:justify;
-    padding-left: 33%;
-}
+
 .nav-link{
     color: var(--dark-blue) !important;
     font-weight: 500;
@@ -66,6 +61,10 @@
     .navbar-expand-lg .navbar-collapse {
         justify-content: end;
         background-color:inherit;
+    }
+
+    .nav-item {
+        text-align:end;
     }
 
     .nav-link {

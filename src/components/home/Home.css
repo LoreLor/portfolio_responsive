@@ -9,11 +9,9 @@
     --transition: all 0.3s ease-out;
 }
 
-section {
-    padding-top: 5rem;
-}
 
 .home-page {
+    padding-top: 5rem;
     position: relative;
 }
 
@@ -23,9 +21,8 @@ section {
     font-family:'Coolvetica-R';
     letter-spacing: 0.4rem;
     font-weight: 500;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-left: 2rem;
-    padding-left: 2rem;
     padding-top: 2rem;
 }
 
@@ -37,7 +34,7 @@ section {
     position: absolute;
     opacity: 0.6;
     left: 2rem;
-    top: 8rem;
+    top: 6rem;
     animation: fadeIn 2s 1.7s backwards;
 }
 
@@ -47,7 +44,7 @@ section {
     color: #f78324;
     font-size: 1.2rem;
     position: absolute;
-    bottom: -3rem;
+    bottom: -5rem;
     left: 2rem;
     animation: fadeIn 2s 1.7s backwards;
     opacity: 0.6;
@@ -56,17 +53,18 @@ section {
 .card-title img {
     width: 3.2rem;
     padding-bottom: 1rem;
+    transform: rotate(-10deg);
 }
 
 .flat-button {
     color: var(--orange-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.3rem;
     font-family: 'Coolvetica-R';
     text-decoration: none;
-    padding: 10px 18px;
-    border: 1px solid;
+    padding: 8px 18px;
+    border: 1px solid var(--orange-color);
     margin-top: 3rem;
     float: right;
     animation: fadeIn 1s 1.9s backwards;
@@ -83,4 +81,29 @@ section {
 
 .flat-button:active{
     transform: scale(0.79);
+}
+
+@media screen and (min-width:992px){
+    .home-page {
+        margin-top: 3rem;
+    }
+    .card-title{
+        font-size: 2rem;
+        padding-left: 4rem;
+    }
+
+    .home-page::before{
+        font-size: 2rem;
+        left: 6rem !important;
+    }
+
+    .home-page::after {
+        font-size: 2rem;
+        left: 6rem !important;
+    }
+
+    .flat-button {
+        float: left;
+        margin-left: 7rem;
+    }
 }
