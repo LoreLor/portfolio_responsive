@@ -1,0 +1,39 @@
+:root {
+    --dark-blue: #040F16;
+    --orange-color:#f78324; 
+    --light-orange: #f0c6a4;
+    --light-blue: #0fe5ec;
+    --light-blue-transparent: #0fe5ec31;
+    --transition: all 0.3s ease-out;
+}
+
+section {
+    padding-top: 5rem;
+}
+
+.home-page {
+    position: relative;
+}
+
+.card-title {
+    color: var(--light-orange);
+    font-size: 1.3rem;
+    margin:0;
+    font-family:'Coolvetica';
+    padding-left: 2rem;
+    padding-top: 2rem;
+    letter-spacing: 0.4rem;
+    font-weight: 500;
+}
+
+.home-page::before {
+    content: '<h1>';
+    font-family: 'La Belle Aurore';
+    color: #f78324;
+    font-size:1rem;
+    position: absolute;
+    opacity: 0.6;
+    left: 1rem;
+    top: 8rem;
+    
+}
