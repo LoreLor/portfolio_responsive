@@ -1,43 +1,55 @@
 :root {
     --dark-blue: #040F16;
-    --orange-color:#f78324; 
+    --middle-blue: #0a82a7;
     --light-blue: #0fe5ec;
     --light-blue-transparent: #0fe5ec31;
+    --orange-color:#f78324; 
+    --light-orange: #f0c6a4;
+    --white-color: #e0eaf0;
     --transition: all 0.3s ease-out;
 }
 
+
 /**todo: animation logo */
-.navbar-brand {
+/* .navbar-brand {
     width: 6rem;
     border: 1px solid var(--light-blue);
     border-radius: 60% 30%;
     padding: 0.5rem;
     margin-left: 1rem;
-}
+} */
 
 .logo-brand {
     width: 5rem;
     padding-bottom: 0.8rem;
+    transform: rotate(-10deg);
 }
 
 .navbar-toggler {
     border-color: var(--orange-color) !important;
+
+}
+
+.navbar-toggler:active{
+    scale: 0.79;
 }
 
 .navbar-collapse {
-    background-color: var(--light-blue-transparent);
+    background-color: var(--middle-blue);
     border-radius: 0.5rem;
-    margin-top: 1rem;
-    padding: 1rem;
-    filter: contrast(1.1);
+    padding-left: 1rem;
+    padding: 0 2rem;
 }
 
+
 .nav-link{
-    color: var(--orange-color) !important;
+    color: var(--dark-blue) !important;
+    font-weight: 500;
+    margin-top: 1rem;
 }
 
 .nav-link:hover {
-    color: var(--light-blue) !important;
+    color: var(--light-orange) !important;
 }
 
 
@@ -51,8 +63,17 @@
         background-color:inherit;
     }
 
+    .nav-item {
+        text-align:end;
+    }
+
     .nav-link {
         font-size: 1.3rem;
+        color: var(--orange-color) !important;
+    }
+
+    .nav-link:hover {
+        color: var(--light-blue);
     }
 
 }
