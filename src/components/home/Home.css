@@ -86,13 +86,14 @@
 
 @media screen and (min-width: 768px) {
     .flat-button {
-        margin-top: 4rem;
+        margin-top: 3rem;
         margin-right: 5rem;
         padding: 5px 2rem;
        
     }
     .card-title{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        padding-top: 8rem;
     }
 }
 
@@ -111,6 +112,7 @@
     .home-page::before{
         font-size: 1.5rem;
         left: 8rem !important;
+        top: 2rem;
     }
 
     .home-page::after {
@@ -131,11 +133,11 @@
         min-height: 100vh;
     }
     .card-title{
-        font-size: 2.3rem;
-        padding-top: 10rem;
-        padding-left: 8rem;
+        font-size: 2.8rem;
+        padding-top: 6rem;
+        padding-left: 12rem;
         letter-spacing: 0.3rem !important;
-        line-height: 2.5rem;
+        line-height: 4rem;
     }
 
     .home-page::before{
@@ -146,11 +148,12 @@
     .home-page::after {
         font-size: 1.7rem;
         left: 6rem !important;
+        bottom:0;
     }
 
     .flat-button {
         float: left;
-        margin-left: 12rem;
+        margin-left: 14rem;
         margin-top: 6rem;
     }
 }
