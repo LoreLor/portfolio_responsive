@@ -23,7 +23,7 @@
     position: absolute;
     opacity: 0.6;
     left: 2rem;
-    top: 0;
+    top: 1rem;
     animation: fadeIn 2s 1.7s backwards;
 }
 
@@ -46,12 +46,12 @@
     letter-spacing: 0.4rem;
     font-weight: 500;
     margin-top: -3rem;
-    padding: 3rem 0 0 0;
+    padding: 4rem 0 0 0;
 }
 
 .about-text img {
-    width: 13rem;
-    height:13rem;
+    width: 12rem;
+    height:12rem;
     align-items: center;
     border-radius: 2em 0;
     border: 1px solid var(--dark-blue);
@@ -66,10 +66,11 @@
 }
 
 .btn-content {
-    margin-top: -1rem;
-    margin-left: auto;
+    margin-top: -2.2rem;
     
 }
+
+
 @media screen and (min-width:992px){
     .about-text h2{
         font-size: 2rem;
@@ -83,5 +84,13 @@
     .about-page::after {
         font-size: 2rem;
         left: 4rem !important;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .about-text h2{
+        font-size: 2.8rem;
+        padding-top: -4rem;
+        margin-bottom: 4rem;
     }
 }

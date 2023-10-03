@@ -141,13 +141,13 @@
     }
 
     .home-page::before{
-        font-size: 1.7rem;
-        left: 6rem !important;
+        font-size: 2rem;
+        left: 8rem !important;
     }
 
     .home-page::after {
-        font-size: 1.7rem;
-        left: 6rem !important;
+        font-size: 2rem;
+        left: 8rem !important;
         bottom:0;
     }
 

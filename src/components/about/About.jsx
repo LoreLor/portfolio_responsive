@@ -53,8 +53,8 @@ const About = () => {
                                 Rendimiento.
                             </p>
                             <p>
-                                Experiencia de desarrollo bajo el marco de
-                                trabajo Scrum, conocimiento en el manejo de
+                                Experiencia de trabajo bajo el marco 
+                                Scrum. Conocimiento en el manejo de
                                 techs como:{" "}
                                 <strong>
                                     React, Redux, NodeJs, Express, Sequelize,
