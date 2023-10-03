@@ -10,7 +10,7 @@ import {
     faReact,
 } from "@fortawesome/free-brands-svg-icons";
 import Loader from "react-loaders";
-import yo from "../../assets/images/yo2.png";
+import yo from "../../assets/images/yo-transparente.png";
 import pdf from "../../assets/images/resume-cv-2023.pdf";
 import "./About.css";
 import "../animatedLetters/AnimatedLetters.scss";
@@ -27,77 +27,63 @@ const About = () => {
     return (
         <>
             <section id="about" className="container about-page">
-                <div className="title-zone">
-                    <h1>
+                <div className="about-text text-center">
+                    <h2>
                         <AnimatedLetters
                             letterClass={letterClass}
-                            strArray={["A", "b", "o", "u", "t", " ", "m", "e"]}
+                            strArray={["A", "B", "O", "U", "T", " ", "M", "E"]}
                             idx={15}
                         />
-                    </h1>
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col">
-                                <img src={yo} alt="photo_perfil" className="photo" />
-                                <p>
-                                    Full Stack Developer con formación en Ciencias
-                                    Contables, Ingeniería Civil, Dirección y Gestión de
-                                    Organismos Deportivos de Alto Rendimiento.
-                                </p>
-                                <p>
-                                    Experiencia en el marco de desarrollo trabajando con
-                                    techs como{" "}
-                                    <strong>
-                                        NodeJS, React, Redux, NodeJs, Express, Sequelize,
-                                        Angular, SpringBoot, Maven, MySQL, PostgreSQL
-                                    </strong>
-                                    , entre otras tecnologías del sector.
-                                </p>
-                                <p>
-                                    Diseño, desarrollo y despliegue de aplicaciones,
-                                    imprimiendo pensamiento creativo, resolución de
-                                    problemas, trabajo en equipo, comunicación y autonomía.
-                                </p>
-                            </div>
-                            <div className="col">
-                            <div className="stage-cube-cont">
-                    <div className="cubespinner">
-                        <div className="face1">
-                            <FontAwesomeIcon icon={faReact} color="#00b1dd" />
-                        </div>
-                        <div className="face2">
-                            <FontAwesomeIcon icon={faAngular} color="#DD0031" />
-                        </div>
-                        <div className="face3">
-                            <FontAwesomeIcon icon={faNodeJs} color="#00dd6f" />
-                        </div>
-                        <div className="face4">
-                            <FontAwesomeIcon icon={faJava} color="#dd007a" />
-                        </div>
-                        <div className="face5">
-                            <FontAwesomeIcon icon={faHtml5} color="#0072dd" />
-                        </div>
-                        <div className="face6">
-                            <FontAwesomeIcon icon={faJs} color="#f7eb49" />
-                        </div>
-                    </div>
-                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
+                    </h2>
 
-                    <a
-                        className="flat-button"
-                        href={pdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        RESUME-PDF
-                    </a>
+                    <div className="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-3">
+                        <div className="col">
+                            <img
+                                src={yo}
+                                alt="photo_perfil"
+                                className="photo"
+                            />
+                        </div>
+
+                        <div className="col">
+                            <p>
+                                Hola, soy Full Stack Developer con background en
+                                Ciencias Contables, Ingeniería Civil, Dirección
+                                y Gestión de Organismos Deportivos de Alto
+                                Rendimiento.
+                            </p>
+                            <p>
+                                Experiencia de desarrollo bajo el marco de
+                                trabajo Scrum, conocimiento en el manejo de
+                                techs como:{" "}
+                                <strong>
+                                    React, Redux, NodeJs, Express, Sequelize,
+                                    Angular, Spring Boot, Maven, REST, MySQL,
+                                    PostgreSQL, HTML, CSS, Docker, AWS ...
+                                </strong>
+                                , estructuras <strong>Monolíticas</strong> y de{" "}
+                                <strong>Microservicios</strong>
+                            </p>
+                            <p>
+                                Diseño, desarrollo y despliegue de aplicaciones,
+                                imprimiendo pensamiento creativo, resolución de
+                                problemas, trabajo en equipo, comunicación y
+                                autonomía.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="btn-content">
+                        <a
+                            className="flat-button"
+                            href={pdf}
+                            target="_blank"
+
+                        >
+                            RESUME - PDF
+                        </a>
+                    </div>
                 </div>
-                
             </section>
             <Loader type="line-scale" />
         </>

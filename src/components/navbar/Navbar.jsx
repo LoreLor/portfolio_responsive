@@ -16,7 +16,7 @@ import "./Navbar.css";
 const Navbar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg fixed-top mb-3" id="navbar">
+            <nav className="navbar navbar-expand-lg fixed-top" id="navbar">
                 <div className="container-fluid px-3">
                     <a className="navbar-brand" href="#">
                         <img
@@ -47,9 +47,7 @@ const Navbar = () => {
                                 <a
                                     className="nav-link active"
                                     aria-current="page"
-                                    exact="true"
                                     href="#home"
-                                    data-target="home"
                                 >
                                     <FontAwesomeIcon
                                         icon={faHome}

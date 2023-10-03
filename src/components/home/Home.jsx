@@ -6,7 +6,7 @@ import "./Home.css";
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState("text-animate");
-    const nameArray = ["O", "R", "E", "N", "A"];
+    const nameArray = [" ","L","O", "R", "E", "N", "A"];
     const jobArray = ["F", "U", "L", "L", " ", "S", "T", "A", "C", "K"];
     const jobArray2 = ["D", "E", "V", "E", "L", "O", "P", "E", "R", "."];
 
@@ -17,10 +17,10 @@ const Home = () => {
     }, []);
 
     return (
-        <section id="home" className="home-page">
+        <section id="home" className="container home-page">
             <div className="container">
-                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3 my-3">
-                    <div className="col ps-5">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3">
+                    <div className="col ps-4">
                         <div className="card-body">
                             <h1 className="card-title">
                                 <span className={letterClass}>H</span>
@@ -28,10 +28,10 @@ const Home = () => {
                                 <br />
                                 <span className={`${letterClass} _13`}>I</span>
                                 <span className={`${letterClass} _14`}>m</span>
-                                <img 
+                                {/* <img 
                                     src={logoTitle} 
                                     alt="Logo de L" 
-                                />
+                                /> */}
                                 <AnimatedLetters
                                     letterClass={letterClass}
                                     strArray={nameArray}
@@ -56,7 +56,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="col ">
+                    <div className="col">
                         <Logo />
                     </div>
                 </div>

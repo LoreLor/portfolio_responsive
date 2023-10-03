@@ -1,0 +1,87 @@
+:root {
+    --dark-blue: #040F16;
+    --middle-blue: #0a82a7;
+    --light-blue: #299EFF;
+    --light-blue-transparent: #0fe5ec31;
+    --orange-color:#f78324; 
+    --light-orange: #f0c6a4;
+    --white-color: #d2d4d6;
+    --transition: all 0.3s ease-out;
+}
+
+
+.about-page {
+    position: relative;
+    min-height: 100vh;
+}
+
+.about-page::before {
+    content: '<section id="about">';
+    font-family: 'La Belle Aurore';
+    color: #f78324;
+    font-size:1.2rem;
+    position: absolute;
+    opacity: 0.6;
+    left: 2rem;
+    top: 0;
+    animation: fadeIn 2s 1.7s backwards;
+}
+
+.about-page::after {
+    content: '</section>';
+    font-family: 'La Belle Aurore';
+    color: #f78324;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: -7rem;
+    left: 2rem;
+    animation: fadeIn 2s 1.7s backwards;
+    opacity: 0.6;
+}
+
+.about-text h2{
+    color: var(--light-orange);
+    font-size: 1.3rem;
+    font-family:'Coolvetica-R';
+    letter-spacing: 0.4rem;
+    font-weight: 500;
+    margin-top: -3rem;
+    padding: 3rem 0 0 0;
+}
+
+.about-text img {
+    width: 13rem;
+    height:13rem;
+    align-items: center;
+    border-radius: 2em 0;
+    border: 1px solid var(--dark-blue);
+    background: linear-gradient(#cfaa8c,#021c2c);
+    filter:contrast(1.08);
+    margin: 1rem 0rem;
+}
+
+.about-text p {
+    color: var(--white-color);
+    padding: 0.3rem 2rem;
+}
+
+.btn-content {
+    margin-top: -1rem;
+    margin-left: auto;
+    
+}
+@media screen and (min-width:992px){
+    .about-text h2{
+        font-size: 2rem;
+    }
+
+    .about-page::before{
+        font-size: 2rem;
+        left: 4rem !important;
+    }
+
+    .about-page::after {
+        font-size: 2rem;
+        left: 4rem !important;
+    }
+}
