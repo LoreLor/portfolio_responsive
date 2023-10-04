@@ -70,6 +70,33 @@
     animation:fadeIn 10s ;
 }
 
+.flat-button_2 {
+    color: var(--orange-color);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    font-family: 'Coolvetica-R';
+    text-decoration: none;
+    padding: 6px 2rem;
+    border: 1px solid var(--orange-color);
+    margin-top: 4rem;
+    float: right;
+    animation: fadeIn 1s 1.9s backwards;
+    white-space: nowrap;
+    margin-right: 2rem;
+    transition: var(--transition);
+    border-radius: 2em 0;
+}
+
+.flat-button_2:hover {
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+}
+
+.flat-button_2:active{
+    transform: scale(0.79);
+}
+
 .btn-content {
     margin-top: -2.2rem; 
 }
@@ -99,8 +126,8 @@
     }
 
     .about-text img {
-        width: 18.5rem;
-        height:18.5rem;
+        width: 15rem;
+        height:15rem;
         margin-left: 2rem;
     }
 
@@ -113,17 +140,17 @@
 
     .about-page::before{
         font-size: 2rem;
-        left: 2rem !important;
+        left: 1rem !important;
     }
 
     .about-page::after {
         font-size: 2rem;
-        left: 2rem !important;
-        bottom: 0.5rem;
+        left: 1rem !important;
+      
     }
 
     .btn-content {
-        margin-top: -5.2rem;
+        margin-top: -7rem;
         margin-left: -3rem;
     }
 

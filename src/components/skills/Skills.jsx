@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Loader from "react-loaders";
 import TagCloud from "TagCloud";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
+//import { useDispatch, useSelector } from "react-redux";
+//import { getSkills } from "../../redux/actions/skill";
 import "./Skills.css";
 
 const textContent = ".tags";
@@ -12,8 +14,22 @@ const texts = [
   'CSS3', 'Animation', 'Interactive',
   '6KB', 'v2.x','react', 'redux', 'angular', 'springBoot'
 ];
+const options = {
+    radius: 130,
+    // animation speed
+    // slow, normal, fast
+    maxSpeed: "normal",
+    initSpeed: "normal",
+    // 0 = top
+    // 90 = left
+    // 135 = right-bottom
+    direction: 135,
+    // interact with cursor move on mouse out
+    keep: true,
+};
 
 const Skills = () => {
+    //const dispatch = useDispatch();
     const [letterClass, setLetterClass] = useState("text-animate");
     const [tagCloudOptions, setTagCloudOptions] = useState({
         radius: window.innerWidth >= 768 ? 200 : 135, // Cambia el radio según el ancho de la pantalla
@@ -30,25 +46,42 @@ const Skills = () => {
     }, []);
 
     useEffect(() => {
-        const newArray = texts.map((s) => s);
-        TagCloud(textContent, newArray, tagCloudOptions);
-    }, [texts, tagCloudOptions]);
+        //dispatch(getSkills());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    //const skills = useSelector((state) => state.skill.allSkills);
+
 
     useEffect(() => {
-        // Escucha el evento de cambio de tamaño de ventana
-        const handleResize = () => {
+        function handleResize() {
+            // responsive del tag
+            const newRadius = window.innerWidth >= 768 ? 200 : 135;
             setTagCloudOptions({
                 ...tagCloudOptions,
-                radius: window.innerWidth >= 768 ? 200 : 135,
+                radius: newRadius,
             });
-        };
+        }
+        // escucha cambio de tamaño
         window.addEventListener("resize", handleResize);
 
-        // Limpia el evento al desmontar el componente
         return () => {
+            //limpia el escuchador
             window.removeEventListener("resize", handleResize);
         };
     }, [tagCloudOptions]);
+
+    useEffect(() => {
+        const newArray = texts.map((s) => s);
+        const tagcloudInstance = new TagCloud(textContent, newArray, tagCloudOptions);
+    
+        return () => {
+            // elimina el tag cuando se desmonta
+            tagcloudInstance.destroy();
+        };
+    }, [texts, tagCloudOptions]);
+
+
 
     return (
         <section id="skills">
@@ -74,6 +107,7 @@ const Skills = () => {
                 </div>
                 <div className="tags-content">
                     <span className="tags" />
+
                 </div>
             </div>
         </section>

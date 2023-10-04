@@ -73,17 +73,15 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="btn-content">
-                        <a
-                            className="flat-button"
+                  
+                        <a className="flat-button_2"
                             href={pdf}
                             target="_blank"
-
                         >
                             RESUME - PDF
                         </a>
                     </div>
-                </div>
+              
             </section>
             {/* <Loader type="line-scale" color='#f78324'/> */}
         </>
