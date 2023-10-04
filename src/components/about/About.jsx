@@ -85,7 +85,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
-            <Loader type="line-scale" />
+            {/* <Loader type="line-scale" color='#f78324'/> */}
         </>
     );
 };

@@ -1,0 +1,81 @@
+:root {
+    --dark-blue: #040F16;
+    --middle-blue: #0a82a7;
+    --light-blue: #299EFF;
+    --cyan-color: #0fe5ec;
+    --light-blue-transparent: #0fe5ec31;
+    --orange-color:#f78324; 
+    --light-orange: #f0c6a4;
+    --white-color: #d2d4d6;
+    --transition: all 0.3s ease-out;
+}
+
+
+.skills-page {
+    position: relative;
+    min-height: 100vh;
+    margin-top: 6rem;
+}
+
+.skills-page::before {
+    content: '<section id="about">';
+    font-family: 'La Belle Aurore';
+    color: var(--orange-color);
+    font-size:1.2rem;
+    position: absolute;
+    opacity: 0.6;
+    left: 2rem;
+    top: 1rem;
+    animation: fadeIn 2s 1.7s backwards;
+    transition: var(--transition);
+}
+
+.skills-page::after {
+    content: '</section>';
+    font-family: 'La Belle Aurore';
+    color: var(--orange-color);
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    animation: fadeIn 2s 1.7s backwards;
+    opacity: 0.6;
+    transition: var(--transition);
+}
+
+.skill-text h2{
+    color: var(--light-orange);
+    font-size: 1.3rem;
+    font-family:'Coolvetica-R';
+    letter-spacing: 0.4rem;
+    font-weight: 500;
+    padding: 4rem 0 0 0;
+    text-align: center;
+}
+
+.tagcloud {
+    color: var(--orange-color);
+    font-family: sans-serif;
+    animation: fadeIn 6s;
+    animation-timing-function: ease-in-out;
+    font-size: 1rem;
+    width: 30wv;
+    height: 30hv;
+}
+
+.tagcloud--item:hover {
+    color: var(--cyan-color)
+}
+
+.tags-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f78324;
+    font-family: sans-serif;
+    animation: fadeIn 6s;
+    animation-timing-function: ease-in-out;
+    margin-top: 4rem;
+
+}
