@@ -49,7 +49,7 @@
     font-family:'Coolvetica-R';
     letter-spacing: 0.4rem;
     font-weight: 500;
-    padding: 4rem 0 0 0;
+    padding: 5rem 0 0 0;
     text-align: center;
 }
 
@@ -76,6 +76,4 @@
     font-family: sans-serif;
     animation: fadeIn 6s;
     animation-timing-function: ease-in-out;
-    margin-top: 4rem;
-
 }
