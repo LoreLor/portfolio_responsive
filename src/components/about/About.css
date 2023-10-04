@@ -79,7 +79,7 @@
     text-decoration: none;
     padding: 6px 2rem;
     border: 1px solid var(--orange-color);
-    margin-top: 4rem;
+    margin-top: 1rem;
     float: right;
     animation: fadeIn 1s 1.9s backwards;
     white-space: nowrap;
@@ -97,9 +97,6 @@
     transform: scale(0.79);
 }
 
-.btn-content {
-    margin-top: -2.2rem; 
-}
 
 
 @media screen and (min-width:992px){
@@ -116,6 +113,12 @@
         font-size: 2rem;
         left: 4rem !important;
     }
+
+    .flat-button_2{
+        float: left;
+        margin-left: 8.2rem;
+        margin-top: -4rem;
+    }
 }
 
 @media screen and (min-width: 1024px){
@@ -129,6 +132,7 @@
         width: 15rem;
         height:15rem;
         margin-left: 2rem;
+        margin-top:3rem;
     }
 
     .about-text p {
@@ -149,9 +153,11 @@
       
     }
 
-    .btn-content {
-        margin-top: -7rem;
-        margin-left: -3rem;
+    .flat-button_2{
+        float: left;
+        margin-left: 11rem;
+        margin-top: -2rem;
     }
+   
 
 }
