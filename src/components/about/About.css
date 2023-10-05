@@ -55,12 +55,13 @@
 .about-text img {
     width: 12rem;
     height:12rem;
+    justify-content: center;
     align-items: center;
     border-radius: 2em 0;
     border: 1px solid var(--dark-blue);
     background: linear-gradient(#cfaa8c,#021c2c);
     filter:contrast(1.08);
-    margin: 1rem 0rem;
+    margin: 1rem auto;
     animation:fadeIn 12s ;
 }
 
@@ -116,8 +117,8 @@
 
     .flat-button_2{
         float: left;
-        margin-left: 8.2rem;
-        margin-top: -4rem;
+        margin-left: 11rem;
+        margin-top: -2rem;
     }
 }
 
@@ -125,14 +126,16 @@
     .about-text h2{
         font-size: 2.8rem;
         margin-top: -5rem !important;
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
     }
 
     .about-text img {
-        width: 15rem;
-        height:15rem;
-        margin-left: 2rem;
-        margin-top:3rem;
+        width: 17rem;
+        height:17rem;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10rem;
+        margin-top:2rem;
     }
 
     .about-text p {
@@ -150,14 +153,13 @@
     .about-page::after {
         font-size: 2rem;
         left: 1rem !important;
+        bottom: -1rem;
       
     }
 
     .flat-button_2{
-        float: left;
-        margin-left: 11rem;
-        margin-top: -2rem;
+        justify-content: center;
+        align-items: center;
     }
-   
 
 }

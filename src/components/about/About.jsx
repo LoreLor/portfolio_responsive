@@ -41,7 +41,7 @@ const About = () => {
                             <img
                                 src={yo}
                                 alt="photo_perfil"
-                                className="photo"
+                                className="d-flex flex-column photo"
                             />
                         </div>
 
@@ -74,7 +74,7 @@ const About = () => {
                     </div>
 
                   
-                        <a className="flat-button_2"
+                        <a className="d-flex flex-column flat-button_2"
                             href={pdf}
                             target="_blank"
                         >

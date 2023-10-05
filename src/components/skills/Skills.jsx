@@ -14,19 +14,19 @@ const texts = [
   'CSS3', 'Animation', 'Interactive',
   '6KB', 'v2.x','react', 'redux', 'angular', 'springBoot'
 ];
-const options = {
-    radius: 130,
-    // animation speed
-    // slow, normal, fast
-    maxSpeed: "normal",
-    initSpeed: "normal",
-    // 0 = top
-    // 90 = left
-    // 135 = right-bottom
-    direction: 135,
-    // interact with cursor move on mouse out
-    keep: true,
-};
+// const options = {
+//     radius: 130,
+//     // animation speed
+//     // slow, normal, fast
+//     maxSpeed: "normal",
+//     initSpeed: "slow",
+//     // 0 = top
+//     // 90 = left
+//     // 135 = right-bottom
+//     direction: 90,
+//     // interact with cursor move on mouse out
+//     keep: true,
+// };
 
 const Skills = () => {
     //const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const Skills = () => {
     const [tagCloudOptions, setTagCloudOptions] = useState({
         radius: window.innerWidth >= 768 ? 200 : 135, // Cambia el radio según el ancho de la pantalla
         maxSpeed: "normal",
-        initSpeed: "normal",
+        initSpeed: "slow",
         direction: 135,
         keep: true,
     });
