@@ -15,11 +15,12 @@
 }
 
 .projects-item {
-    height: 25rem;
+    height: 28rem;
     position: relative;
     border-bottom: 5px solid #0fe5ec;
     overflow: hidden;
     cursor: pointer;
+    border: 1px solid var(--light-blue-transparent);
 }
 
 .projects-item img {
@@ -54,7 +55,7 @@
     width: 100%;
     background: #f78324da;
     box-shadow: 0 0 20px 0px rgb(5, 245, 245);
-    transition: ease;
+    transition: var(--transition);
 }
 
 .projects-item:hover::after {

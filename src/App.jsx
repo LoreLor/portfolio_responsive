@@ -23,7 +23,7 @@ function App() {
             <Projects />
             <div className="separator"></div>
             <div className="up sticky-bottom text-end px-3">
-                <a href="#home">
+                <a href="#navbar">
                     <FontAwesomeIcon icon={faArrowAltCircleUp} />
                 </a>
             </div>

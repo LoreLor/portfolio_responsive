@@ -25,28 +25,28 @@ const Projects = () => {
 
     return (
         <>
-            <div className={s.projects_page} id="projects">
+            <div className={`container ${s.projects_page}`} id="projects">
                 <div className={s.projects_text}>
                     <h2>
                         <AnimatedLetters
                             letterClass={letterClass}
                             strArray={[
                                 "M",
-                                "y",
+                                "Y",
                                 " ",
                                 "P",
-                                "r",
-                                "o",
-                                "j",
-                                "e",
-                                "c",
-                                "t",
-                                "s",
+                                "R",
+                                "O",
+                                "J",
+                                "E",
+                                "C",
+                                "T",
+                                "S",
                             ]}
                             idx={15}
                         />
                     </h2>
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 mx-3 mt-3">
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 mx-1 mt-2">
                         <div className="col">
                             <CardProject
                                 name='Lorena' 

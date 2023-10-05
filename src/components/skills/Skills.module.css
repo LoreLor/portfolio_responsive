@@ -14,7 +14,7 @@
 .skills_page {
     position: relative;
     min-height: 100vh;
-
+    
 }
 
 .skills_page::before {
