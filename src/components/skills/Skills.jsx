@@ -4,8 +4,8 @@ import TagCloud from "TagCloud";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 //import { useDispatch, useSelector } from "react-redux";
 //import { getSkills } from "../../redux/actions/skill";
-import s from "./Skills.module.css";
 import './Skills.css'
+import s from "./Skills.module.css";
 
 
 

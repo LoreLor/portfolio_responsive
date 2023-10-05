@@ -2,7 +2,6 @@
     --dark-blue: #040F16;
     --middle-blue: #0a82a7;
     --light-blue: #299EFF;
-    --cyan-color: #0fe5ec;
     --light-blue-transparent: #0fe5ec31;
     --orange-color:#f78324; 
     --light-orange: #f0c6a4;
@@ -10,17 +9,16 @@
     --transition: all 0.3s ease-out;
 }
 
-
-.skills_page {
+.projects_page {
     position: relative;
     min-height: 100vh;
-
+    
 }
 
-.skills_page::before {
-    content: '<section id="skills">';
+.projects_page::before {
+    content: '<section id="projects">';
     font-family: 'La Belle Aurore';
-    color: var(--orange-color);
+    color: #f78324;
     font-size:1.2rem;
     position: absolute;
     opacity: 0.6;
@@ -30,60 +28,26 @@
     transition: var(--transition);
 }
 
-.skills_page::after {
+.projects_page::after {
     content: '</section>';
     font-family: 'La Belle Aurore';
-    color: var(--orange-color);
+    color: #f78324;
     font-size: 1.2rem;
     position: absolute;
-    bottom: 0;
+    bottom: -7rem;
     left: 2rem;
     animation: fadeIn 2s 1.7s backwards;
     opacity: 0.6;
     transition: var(--transition);
 }
 
-.skill_text h2{
+.projects_text h2{
     color: var(--light-orange);
     font-size: 1.3rem;
     font-family:'Coolvetica-R';
     letter-spacing: 0.4rem;
     font-weight: 500;
-    padding: 5rem 0 0 0;
+    margin-top: -3rem;
+    padding: 4rem 0 0 0;
     text-align: center;
-}
-
-
-.tags_content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #f78324;
-    font-family: sans-serif;
-    animation: fadeIn 6s;
-    animation-timing-function: ease-in-out;
-    margin-top: 3rem;
-}
-
-@media screen and (min-width:1024px){
-    .skill_text h2{
-        font-size: 2.8rem;
-    }
-
-    .skills_page::before{
-        font-size: 2rem;
-        left: 1rem !important;
-    }
-
-    .skills_page::after {
-        font-size: 2rem;
-        left: 1rem !important;
-        bottom: 0.5rem;
-    }
-
-    .tags_content {
-        margin-top: 1.2rem;
-    }
-
 }

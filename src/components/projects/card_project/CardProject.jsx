@@ -1,20 +1,26 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from 'react'
+//import { useDispatch, useSelector } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye} from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import Loader from 'react-loaders'
+import './CardProject.scss';
 
 const CardProject = ({ name, image, description, stack, deploy, demo, github }) => {
     return (
         <Fragment key={name}>
             <div className="projects">
-                <div className="projects-items">
+                <div className="projects-items h-100">
                     <div className="projects-item">
                         <img
-                            src={require(`../../assets/images/${image}`)}
-                            alt="Proyectos"
+                            src={image}
+                            alt="Project image"
                         />
-                        <div style={{ paddingLeft: 10, gap: 2 }}>
-                            <p>Name: {name}</p>
-                            <p>Description: {description}</p>
-                            <p>Stack: {stack}</p>
-                            <p>Deploy: {deploy}</p>
+                        <div className='projects-text'>
+                            <p>Name: <span>{name}</span></p>
+                            <p>Description: <span>{description}</span></p>
+                            <p>Stack: <span>{stack}</span></p>
+                            <p>Deploy: <span>{deploy}</span></p>
                         </div>
                         <div className="projects-btns">
                             <a
