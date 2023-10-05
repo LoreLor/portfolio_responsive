@@ -95,7 +95,7 @@ const Projects = () => {
                             <CardProject
                                 name='Lorena' 
                                 image="../src/assets/images/ecommerce_pf.png"
-                                description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nesciunt ea animi sed voluptate aperiam eum, consectetur voluptatem dolor nemo maiores et adipisci tempore! Repellendus illo aperiam excepturi necessitatibus dolor.'
+                                description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nesciunt ea animi sed voluptate aperiam eum'
                                 stack='ashkashkash sasdhsadhsa jsdks' 
                                 deploy='dsdsdsd'
                                 demo=''
