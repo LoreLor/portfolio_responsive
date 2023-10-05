@@ -4,7 +4,10 @@ import TagCloud from "TagCloud";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 //import { useDispatch, useSelector } from "react-redux";
 //import { getSkills } from "../../redux/actions/skill";
-import "./Skills.css";
+import s from "./Skills.module.css";
+import './Skills.css'
+
+
 
 const textContent = ".tags";
 const texts = [
@@ -85,8 +88,8 @@ const Skills = () => {
 
     return (
         <section id="skills">
-            <div className="container skills-page">
-                <div className="skill-text">
+            <div className={`container ${s.skills_page}`}>
+                <div className={s.skill_text}>
                     <h2>
                         <AnimatedLetters
                             letterClass={letterClass}
@@ -105,9 +108,8 @@ const Skills = () => {
                         />
                     </h2>
                 </div>
-                <div className="tags-content">
-                    <span className="tags" />
-
+                <div className={s.tags_content}>
+                    <span className={`${s.tags} tags`} />
                 </div>
             </div>
         </section>

@@ -10,13 +10,13 @@
 }
 
 
-.about-page {
+.about_page {
     position: relative;
     min-height: 100vh;
     
 }
 
-.about-page::before {
+.about_page::before {
     content: '<section id="about">';
     font-family: 'La Belle Aurore';
     color: #f78324;
@@ -29,7 +29,7 @@
     transition: var(--transition);
 }
 
-.about-page::after {
+.about_page::after {
     content: '</section>';
     font-family: 'La Belle Aurore';
     color: #f78324;
@@ -42,7 +42,7 @@
     transition: var(--transition);
 }
 
-.about-text h2{
+.about_text h2{
     color: var(--light-orange);
     font-size: 1.3rem;
     font-family:'Coolvetica-R';
@@ -52,7 +52,7 @@
     padding: 4rem 0 0 0;
 }
 
-.about-text img {
+.about_text img {
     width: 12rem;
     height:12rem;
     justify-content: center;
@@ -65,57 +65,55 @@
     animation:fadeIn 12s ;
 }
 
-.about-text p {
+.about_text p {
     color: var(--white-color);
     padding: 0.3rem 2rem;
     animation:fadeIn 10s ;
 }
 
-.flat-button_2 {
+.btn_2 {
     color: var(--orange-color);
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.3rem;
     font-family: 'Coolvetica-R';
-    text-decoration: none;
     padding: 6px 2rem;
     border: 1px solid var(--orange-color);
     margin-top: 1rem;
     float: right;
     animation: fadeIn 1s 1.9s backwards;
-    white-space: nowrap;
     margin-right: 2rem;
     transition: var(--transition);
     border-radius: 2em 0;
 }
 
-.flat-button_2:hover {
+.btn_2:hover {
     background-color: var(--light-blue);
     color: var(--dark-blue);
 }
 
-.flat-button_2:active{
+.btn_2:active{
     transform: scale(0.79);
 }
 
 
 
 @media screen and (min-width:992px){
-    .about-text h2{
+    .about_text h2{
         font-size: 2rem;
     }
 
-    .about-page::before{
-        font-size: 2rem;
-        left: 4rem !important;
-    }
-
-    .about-page::after {
+    .about_page::before{
         font-size: 2rem;
         left: 4rem !important;
     }
 
-    .flat-button_2{
+    .about_page::after {
+        font-size: 2rem;
+        left: 4rem !important;
+    }
+
+    .btn_2{
         float: left;
         margin-left: 11rem;
         margin-top: -2rem;
@@ -123,13 +121,13 @@
 }
 
 @media screen and (min-width: 1024px){
-    .about-text h2{
+    .about_text h2{
         font-size: 2.8rem;
         margin-top: -5rem !important;
         margin-bottom: 2rem;
     }
 
-    .about-text img {
+    .about_text img {
         width: 17rem;
         height:17rem;
         justify-content: center;
@@ -138,28 +136,25 @@
         margin-top:2rem;
     }
 
-    .about-text p {
+    .about_text p {
         font-size: 1.2rem;
         text-align: center;
         margin-left: -2rem;
         padding-right: -1.5rem;
     }
 
-    .about-page::before{
+    .about_page::before{
         font-size: 2rem;
         left: 1rem !important;
     }
 
-    .about-page::after {
+    .about_page::after {
         font-size: 2rem;
         left: 1rem !important;
         bottom: -1rem;
       
     }
 
-    .flat-button_2{
-        justify-content: center;
-        align-items: center;
-    }
+    
 
 }

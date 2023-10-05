@@ -12,7 +12,7 @@ import {
 import Loader from "react-loaders";
 import yo from "../../assets/images/yo-transparente.png";
 import pdf from "../../assets/images/resume-cv-2023.pdf";
-import "./About.css";
+import s from "./About.module.css";
 import "../animatedLetters/AnimatedLetters.scss";
 
 const About = () => {
@@ -26,8 +26,8 @@ const About = () => {
 
     return (
         <>
-            <section id="about" className="container about-page">
-                <div className="about-text text-center">
+            <section id="about" className={`container ${s.about_page}`}>
+                <div className={`${s.about_text} text-center`}>
                     <h2>
                         <AnimatedLetters
                             letterClass={letterClass}
@@ -41,7 +41,7 @@ const About = () => {
                             <img
                                 src={yo}
                                 alt="photo_perfil"
-                                className="d-flex flex-column photo"
+                                className="d-flex flex-column"
                             />
                         </div>
 
@@ -71,17 +71,16 @@ const About = () => {
                                 autonomía.
                             </p>
                         </div>
+                        <div className="col">
+                            <a className={s.btn_2}
+                                href={pdf}
+                                target="_blank">
+                                RESUME - PDF
+                            </a>
+                        </div>
                     </div>
 
-                  
-                        <a className="d-flex flex-column flat-button_2"
-                            href={pdf}
-                            target="_blank"
-                        >
-                            RESUME - PDF
-                        </a>
                     </div>
-              
             </section>
             {/* <Loader type="line-scale" color='#f78324'/> */}
         </>

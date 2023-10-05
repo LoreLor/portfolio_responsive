@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import Logo from "../home/logo/Logo";
 import logoTitle from "../../assets/images/logo-L2-rem.png";
-import "./Home.css";
+import s from "./Home.module.css";
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState("text-animate");
@@ -17,12 +17,12 @@ const Home = () => {
     }, []);
 
     return (
-        <section id="home" className="container home-page">
+        <section id="home" className={`container ${s.home_page}`}>
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3">
                     <div className="col ps-4">
                         <div className="card-body">
-                            <h1 className="card-title">
+                            <h1 className={s.card_title}>
                                 <span className={letterClass}>H</span>
                                 <span className={`${letterClass} _12`}>i,</span>
                                 <br />
@@ -51,7 +51,7 @@ const Home = () => {
                                     idx={13}
                                 />
                             </h1>
-                            <a href="#contact" className="flat-button">
+                            <a href="#contact" className={s.flat_button}>
                                 CONTACT ME
                             </a>
                         </div>
