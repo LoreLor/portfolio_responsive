@@ -22,11 +22,11 @@ function App() {
             <div className="separator"></div>
             <Projects />
             <div className="separator"></div>
-            <div className="up">
+            <div className="up sticky-bottom text-end px-3">
                 <a href="#home">
                     <FontAwesomeIcon icon={faArrowAltCircleUp} />
                 </a>
-      </div>
+            </div>
         </>
     );
 }
