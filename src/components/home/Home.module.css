@@ -171,3 +171,16 @@
         bottom:-1rem;
     }
 }
+
+@media screen and (min-width:1300px){
+    .home_page::before{
+        font-size: 2rem;
+        left: 8rem !important;
+    }
+
+    .home_page::after {
+        font-size: 2rem;
+        left: 8rem !important;
+        bottom:-1rem;
+    }
+}
