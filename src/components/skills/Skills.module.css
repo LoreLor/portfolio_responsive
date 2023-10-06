@@ -59,7 +59,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #f78324;
+    color:var(--orange-color);
     font-family: sans-serif;
     animation: fadeIn 6s;
     animation-timing-function: ease-in-out;

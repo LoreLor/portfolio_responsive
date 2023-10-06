@@ -1,7 +1,7 @@
 :root {
     --dark-blue: #040F16;
     --middle-blue: #0a82a7;
-    --light-blue: #299EFF;
+    --light-blue: #0fe5ec;
     --light-blue-transparent: #0fe5ec31;
     --orange-color:#f78324; 
     --light-orange: #f0c6a4;
@@ -19,7 +19,7 @@
 .about_page::before {
     content: '<section id="about">';
     font-family: 'La Belle Aurore';
-    color: #f78324;
+    color: var(--orange-color);
     font-size:1.2rem;
     position: absolute;
     opacity: 0.6;
@@ -105,12 +105,12 @@
 
     .about_page::before{
         font-size: 2rem;
-        left: 4rem !important;
+        left: 2rem !important;
     }
 
     .about_page::after {
         font-size: 2rem;
-        left: 4rem !important;
+        left: 2rem !important;
     }
 
     .btn_2{

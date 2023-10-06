@@ -18,7 +18,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`navbar ${s.navbar} navbar-expand-lg fixed-top ${s.navbar_expand_lg} `} id="navbar">
+        <nav className={`navbar ${s.navbar} navbar-expand-lg fixed-top ${s.navbar_expand_lg}`} id="navbar">
             <div className="container-fluid px-3">
                 <a className="navbar-brand" href="#">
                     <img src={logoL2} alt="Logo de L" className={s.logo_brand} />
