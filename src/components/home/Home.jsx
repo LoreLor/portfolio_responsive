@@ -17,10 +17,9 @@ const Home = () => {
     }, []);
 
     return (
-        <section id="home" className={`container ${s.home_page}`}>
-            <div className="container">
+        <section className={`container ${s.home_page}`} id="home" >
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3">
-                    <div className="col ps-4">
+                    <div className="col">
                         <div className="card-body">
                             <h1 className={s.card_title}>
                                 <span className={letterClass}>H</span>
@@ -60,7 +59,6 @@ const Home = () => {
                         <Logo />
                     </div>
                 </div>
-            </div>
         </section>
     );
 };
