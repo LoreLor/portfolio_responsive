@@ -34,7 +34,7 @@
 }
 
 .navbar_collapse {
-    background-color: var(--middle-blue);
+    background-color: var(--light-blue);
     border-radius: 0.5rem;
     padding-left: 1rem;
     padding: 0 2rem;

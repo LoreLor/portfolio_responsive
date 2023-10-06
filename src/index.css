@@ -28,6 +28,7 @@
     --light-blue: #0fe5ec;
     --light-blue-transparent: #0fe5ec31;
     --orange-color:#f78324; 
+    --orange-transparent: #f7832485;
     --light-orange: #f0c6a4;
     --white-color: #d2d4d6;
     --transition: all 0.3s ease-out;
@@ -108,16 +109,23 @@ textarea {
 }
 
 /* arrow-up */
-
-
 .up a {
+  margin-right: 1rem;
   color:var(--orange-color);
-  font-size: 3rem;
   text-align: right;
-  transition: all 0.5s ease-in;
+  transition: var(--transition);
+  font-size: 2.5rem;
 }
 
 .up a:hover{
   transition: all 0.5s ease-in;
   color:var(--light-blue);
+}
+
+@media screen and (min-width: 1024px){
+  .up a{
+    padding-right: 2.5rem;
+    font-size: 3rem;
+    
+  }
 }

@@ -6,6 +6,9 @@ import Projects from "./components/projects/Projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import './index.css';
+import Footer from "./components/footer/Footer";
+import Contact from "./components/contact/Contact";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -22,11 +25,16 @@ function App() {
             <div className="separator"></div>
             <Projects />
             <div className="separator"></div>
-            <div className="up sticky-bottom text-end px-3">
+            <Contact />
+            <div className="separator"></div>
+  
+            <div className="up sticky-bottom text-end py-3">
                 <a href="#navbar">
                     <FontAwesomeIcon icon={faArrowAltCircleUp} />
                 </a>
             </div>
+            <div className="separator"></div>
+            <Footer />
         </>
     );
 }
