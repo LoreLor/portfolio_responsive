@@ -46,7 +46,7 @@ const Projects = () => {
                             idx={15}
                         />
                     </h2>
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 mx-1 mt-2">
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5  mt-2">
                         <div className="col">
                             <CardProject
                                 name='Lorena' 
