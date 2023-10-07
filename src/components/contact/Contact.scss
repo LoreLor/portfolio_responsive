@@ -67,7 +67,6 @@
             overflow: hidden;
             display: block;
             clear: both;
-            position: relative;
             animation: fadeInUp 2s 2s;
             animation-fill-mode: forwards;
         }
@@ -145,6 +144,12 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .contact-title h2{
+        font-size: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
     .contact-page::before{
         font-size: 2rem;
         left: 1rem !important;
@@ -154,6 +159,5 @@
         font-size: 2rem;
         left: 1rem !important;
         bottom: -1rem;
-      
     }
 }

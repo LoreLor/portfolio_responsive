@@ -30,8 +30,8 @@ function App() {
             <div className="separator"></div>
             <Contact />
             <div className="separator"></div>
-            <div className="up sticky-bottom text-end py-3">
-                <a href="#navbar">
+            <div className="up sticky-bottom text-end py-3 pe-2">
+                <a href="#">
                     <FontAwesomeIcon icon={faArrowAltCircleUp} />
                 </a>
             </div>
