@@ -59,7 +59,7 @@ const Skills = () => {
     useEffect(() => {
         function handleResize() {
             // responsive del tag
-            const newRadius = window.innerWidth >= 1024 ? 260 : 150;
+            const newRadius = window.innerWidth >= 1024 ? 260 : 140;
             setTagCloudOptions({
                 ...tagCloudOptions,
                 radius: newRadius,

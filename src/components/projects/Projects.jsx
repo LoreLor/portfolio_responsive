@@ -4,6 +4,7 @@ import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import CardProject from "./card_project/CardProject";
 //import { allProjects } from "../../redux/actions/project";
 import s from './Projects.module.css';
+import Loader from "react-loaders";
 
 
 
@@ -46,7 +47,8 @@ const Projects = () => {
                             idx={15}
                         />
                     </h2>
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5  mt-2">
+                    
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">
                         <div className="col">
                             <CardProject
                                 name='Lorena' 
@@ -54,8 +56,8 @@ const Projects = () => {
                                 description='lorenanansnndasdbdsjdgsjgjsghjsfgajsgfas' 
                                 stack='ashkashkash sasdhsadhsa jsdks' 
                                 deploy='dsdsdsd'
-                                demo=''
-                                github=''
+                                demo='fsdf'
+                                github='sdfsdf'
                             />
                         </div>
                         <div className="col">
@@ -105,6 +107,7 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
+            
         </>
     );
 };

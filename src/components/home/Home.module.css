@@ -9,6 +9,9 @@
     --transition: all 0.3s ease-out;
 }
 
+.container {
+    margin: 0 1rem;
+}
 
 .home_page {
     position: relative;
@@ -159,38 +162,22 @@
     }
 }
 
-@media screen and (min-width:1440px){
-    .home_page::before{
-        font-size: 2rem;
-        left: 5rem !important;
-    }
 
-    .home_page::after {
-        font-size: 2rem;
-        left: 5rem !important;
-        bottom:-1rem;
-    }
-}
 
 @media screen and (min-width:1300px){
+    .container {
+        margin: 0 auto;
+    }
+    
     .home_page::before{
         font-size: 2rem;
-        left: 8rem !important;
+        left: 6rem !important;
     }
 
     .home_page::after {
         font-size: 2rem;
-        left: 8rem !important;
+        left: 6rem !important;
         bottom:-1rem;
     }
 }
 
-@media screen and (min-width:1400px){
-    .card_title{
-        padding-left: 15rem;
-    }
-
-    .flat_button {
-        margin-left: 16rem;
-    }
-}

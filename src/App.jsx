@@ -3,12 +3,14 @@ import Navbar from "./components/navbar/Navbar";
 import About from "./components/about/About";
 import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
-import './index.css';
-import Footer from "./components/footer/Footer";
-import Contact from "./components/contact/Contact";
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import './index.css';
+
 
 
 
@@ -16,6 +18,7 @@ function App() {
     return (
         <>
             <Navbar />
+            <ToastContainer />
             <div className="separator"></div>
             <Home />
             <div className="separator"></div>
@@ -27,13 +30,11 @@ function App() {
             <div className="separator"></div>
             <Contact />
             <div className="separator"></div>
-  
             <div className="up sticky-bottom text-end py-3">
                 <a href="#navbar">
                     <FontAwesomeIcon icon={faArrowAltCircleUp} />
                 </a>
             </div>
-            <div className="separator"></div>
             <Footer />
         </>
     );

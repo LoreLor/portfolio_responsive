@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logoL2 from "../../assets/images/logo-L2-rem.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faHome, faUser, faScrewdriverWrench, faFolderOpen } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHome, faUser, faScrewdriverWrench, faFolderOpen, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import s from "./Navbar.module.css";
 
 
@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <nav className={`navbar ${s.navbar} navbar-expand-lg fixed-top ${s.navbar_expand_lg}`} id="navbar">
-            <div className="container-fluid px-3">
+            <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     <img src={logoL2} alt="Logo de L" className={s.logo_brand} />
                 </a>
@@ -75,6 +75,16 @@ const Navbar = () => {
                             >
                                 <FontAwesomeIcon icon={faFolderOpen} />
                                 <span className="text-capitalize px-3">projects</span>
+                            </a>
+                        </li>
+                        <li className={`${s.nav_item} nav-item`}>
+                            <a
+                                className={`${s.nav_link} nav-link active`}
+                                href="#contact"
+                                onClick={closeMenu}
+                            >
+                                <FontAwesomeIcon icon={faAddressCard} />
+                                <span className="text-capitalize px-3">contact</span>
                             </a>
                         </li>
                     </ul>

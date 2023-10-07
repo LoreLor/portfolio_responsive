@@ -103,6 +103,10 @@ textarea {
   animation-fill-mode: forwards;
 }
 
+.loader-line {
+  color: #f78324;
+}
+
 .separator {
   width: 100%;
   height: 5rem;
@@ -110,7 +114,7 @@ textarea {
 
 /* arrow-up */
 .up a {
-  margin-right: 1rem;
+
   color:var(--orange-color);
   text-align: right;
   transition: var(--transition);
@@ -124,7 +128,14 @@ textarea {
 
 @media screen and (min-width: 1024px){
   .up a{
-    padding-right: 2.5rem;
+    margin-right: 0.5rem;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .up a{
+    margin-right: 1rem;
     font-size: 3rem;
     
   }
