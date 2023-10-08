@@ -18,7 +18,7 @@ const Footer = () => {
 
     return (
 
-            <div className={`container-expanded-lg flex-column flex-wrap justify-content-center text-center ${s.footer_content}`}>
+            <div className={`container-fluid flex-column flex-wrap justify-content-center text-center ${s.footer_content}`}>
                 {/* Social Contact */}
                 <div className="row">
                     <div className={`col-md-6 pt-3 ${s.col}`}>
