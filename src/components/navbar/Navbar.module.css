@@ -18,7 +18,12 @@
     padding: 0.5rem;
     margin-left: 1rem;
 } */
+.navbar {
+    height: 8rem;
+    background: linear-gradient(#0a82a75e,#06182444);
+    box-shadow: inset 0 20px 20px -20px rgb(5, 245, 245) !important;
 
+}
 .logo_brand {
     width: 5rem;
     padding-bottom: 0.8rem;
