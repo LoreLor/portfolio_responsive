@@ -17,9 +17,8 @@ const Footer = () => {
     }, []);
 
     return (
-        <section className="container-fluid">
 
-            <div className={`container-lg flex-column flex-wrap justify-content-center text-center ${s.footer_content}`}>
+            <div className={`container-expanded-lg flex-column flex-wrap justify-content-center text-center ${s.footer_content}`}>
                 {/* Social Contact */}
                 <div className="row">
                     <div className={`col-md-6 pt-3 ${s.col}`}>
@@ -98,7 +97,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </section>
     );
 };
 
