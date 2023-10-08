@@ -6,8 +6,8 @@ import './index.css'
 import { StrictMode } from 'react'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <StrictMode>
+    <React.StrictMode>
         <App />
-    </StrictMode>
+    </React.StrictMode>
 
 )
