@@ -2,25 +2,18 @@
     display: inline-block;
     opacity: 0;
     animation: bounceIn 1s 1s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both; /* Cambio aquí */
     min-width: 15px;
+    letter-spacing: 0.3rem;
 
-    
-}
-
-.text-animate-hover {
-    min-width: 15px;
-    display: inline-block;
-    animation-fill-mode: both;
-
-    &:hover {
+    &._hover {
         animation: rubberBand 1.2s;
-        color: #b1f0ed
+        color: #b1f0ed;
     }
-}
 
-@for $i from 1 through 49 {
-    .text-animate._#{$i} {
-        animation-delay: calc($i/10)s;
+    @for $i from 1 through 60 {
+        &._#{$i} {
+            animation-delay: calc(#{$i} * 0.1s);
+        }
     }
 }
