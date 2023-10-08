@@ -4,7 +4,7 @@ import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import CardProject from "./card_project/CardProject";
 //import { allProjects } from "../../redux/actions/project";
 import s from './Projects.module.css';
-import Loader from "react-loaders";
+import mockImage from '../../assets/images/ecommerce_pf.png'
 
 
 
@@ -52,7 +52,7 @@ const Projects = () => {
                         <div className="col">
                             <CardProject
                                 name='Lorena' 
-                                image="../src/assets/images/ecommerce_pf.png"
+                                image={mockImage}
                                 description='lorenanansnndasdbdsjdgsjgjsghjsfgajsgfas' 
                                 stack='ashkashkash sasdhsadhsa jsdks' 
                                 deploy='dsdsdsd'
@@ -96,7 +96,7 @@ const Projects = () => {
                         <div className="col">
                             <CardProject
                                 name='Lorena' 
-                                image="../src/assets/images/ecommerce_pf.png"
+                                image={mockImage}
                                 description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nesciunt ea animi sed voluptate aperiam eum'
                                 stack='ashkashkash sasdhsadhsa jsdks' 
                                 deploy='dsdsdsd'
