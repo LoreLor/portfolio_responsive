@@ -95,6 +95,7 @@ const Contact = () => {
                                         placeholder="Name"
                                         required
                                         onChange={handlerChange}
+                                        data-aos="fade-right"
                                     />
                                 </li>
                                 <li className="half">
@@ -104,6 +105,7 @@ const Contact = () => {
                                         placeholder="Email"
                                         required
                                         onChange={handlerChange}
+                                        data-aos="fade-left"
                                     />
                                 </li>
                                 <li>
@@ -113,6 +115,7 @@ const Contact = () => {
                                         name="subject"
                                         required
                                         onChange={handlerChange}
+                                        data-aos="fade-up"
                                     />
                                 </li>
                                 <li>
@@ -121,6 +124,7 @@ const Contact = () => {
                                         name="message"
                                         required
                                         onChange={handlerChange}
+                                        data-aos="fade-up"
                                     ></textarea>
                                 </li>
                                 <li>

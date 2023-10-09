@@ -19,7 +19,7 @@ const Home = () => {
         <section className={`container ${s.home_page}`} id="home">
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3">
                 <div className="col">
-                    <h1 className={s.card_title}>
+                    <h1 className={s.card_title} data-aos="fade-right">
                         <span className={letterClass}>H</span>
                         <span className={`${letterClass} _12`}>i,</span>
                         <br />
@@ -48,7 +48,7 @@ const Home = () => {
                             idx={13}
                         />
                     </h1>
-                    <a href="#contact" className={s.flat_button}>
+                    <a href="#contact" className={s.flat_button} data-aos="fade-up">
                         CONTACT ME
                     </a>
                 </div>
