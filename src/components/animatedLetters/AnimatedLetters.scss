@@ -2,13 +2,14 @@
     display: inline-block;
     opacity: 0;
     animation: bounceIn 1s 1s;
-    animation-fill-mode: both; /* Cambio aquí */
+    animation-fill-mode: forwards;
     min-width: 15px;
-    letter-spacing: 0.3rem;
+    cursor: pointer;
 
-    &._hover {
+    &:hover {
         animation: rubberBand 1.2s;
         color: #b1f0ed;
+        opacity: 1;
     }
 
     @for $i from 1 through 60 {
