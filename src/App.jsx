@@ -11,10 +11,19 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 
 function App() {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,
+        });
+    },[]);
+
     return (
         <>
             <Navbar />

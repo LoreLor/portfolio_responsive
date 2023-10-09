@@ -4,6 +4,15 @@ import TagCloud from "TagCloud";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 //import { useDispatch, useSelector } from "react-redux";
 //import { getSkills } from "../../redux/actions/skill";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faAngular,
+    faHtml5,
+    faJava,
+    faJs,
+    faNodeJs,
+    faReact,
+} from "@fortawesome/free-brands-svg-icons";
 import './Skills.css'
 import s from "./Skills.module.css";
 
