@@ -109,12 +109,13 @@ textarea {
 
 .separator {
   width: 100%;
-  height: 5rem;
+  height: 6rem;
+  width: 100%;
 }
 
 /* arrow-up */
 .up a {
-
+  z-index: 1020;
   color:var(--orange-color);
   text-align: right;
   transition: var(--transition);
@@ -130,13 +131,5 @@ textarea {
   .up a{
     margin-right: 0.5rem;
     font-size: 3rem;
-  }
-}
-
-@media screen and (min-width: 1024px){
-  .up a{
-    margin-right: 1rem;
-    font-size: 3rem;
-    
   }
 }

@@ -12,6 +12,7 @@ import mockImage from '../../assets/images/ecommerce_pf.png'
 const Projects = () => {
     //const dispatch = useDispatch();
     const [letterClass, setLetterClass] = useState("text-animate");
+    const [animateTitle, setAnimateTitle] = useState(false);
 
     //useEffect(() => {
         //dispatch(allProjects());
@@ -19,17 +20,36 @@ const Projects = () => {
     //}, []);
 
     useEffect(() => {
-        setTimeout(() => {
-            setLetterClass("text-animate-hover");
-        }, 3500);
+        const handleScroll = () => {
+            const aboutSection = document.getElementById("about");
+            if (!aboutSection) return;
+            // devuelve el tamaño del elemento y su posicion relativa
+            const rect = aboutSection.getBoundingClientRect();
+
+            // Verifica si la parte superior de la sección está en el campo de visión
+            if (rect.top <= window.innerHeight * 0.4) {
+                setAnimateTitle(true);
+            } else {
+                setAnimateTitle(false);
+            }
+        };
+            //agrego escuchador al scroll
+            window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
+
 
     return (
         <>
             <div className={`container ${s.projects_page}`} id="projects">
                 <div className={s.projects_text}>
                     <h2>
-                        <AnimatedLetters
+                    {
+                        animateTitle ? 
+                        (<AnimatedLetters
                             letterClass={letterClass}
                             strArray={[
                                 "M",
@@ -45,7 +65,8 @@ const Projects = () => {
                                 "S",
                             ]}
                             idx={15}
-                        />
+                        />) : (null)
+                    }
                     </h2>
                     
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">

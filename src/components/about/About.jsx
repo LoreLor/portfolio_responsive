@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faAngular,
-    faHtml5,
-    faJava,
-    faJs,
-    faNodeJs,
-    faReact,
-} from "@fortawesome/free-brands-svg-icons";
-import Loader from "react-loaders";
 import yo from "../../assets/images/yo-transparente.png";
 import pdf from "../../assets/images/resume-cv-2023.pdf";
 import s from "./About.module.css";
 import "../animatedLetters/AnimatedLetters.scss";
+
+
 
 const About = () => {
     const [letterClass, setLetterClass] = useState("text-animate");
@@ -23,7 +15,7 @@ const About = () => {
         const handleScroll = () => {
             const aboutSection = document.getElementById("about");
             if (!aboutSection) return;
-
+            // devuelve el tamaño del elemento y su posicion relativa
             const rect = aboutSection.getBoundingClientRect();
 
             // Verifica si la parte superior de la sección está en el campo de visión
@@ -33,8 +25,8 @@ const About = () => {
                 setAnimateTitle(false);
             }
         };
-
-        window.addEventListener("scroll", handleScroll);
+            //agrego escuchador al scroll
+            window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -45,6 +37,7 @@ const About = () => {
     return (
         <section id="about" className={`container ${s.about_page}`}>
             <div className={`${s.about_text} text-center`}>
+            {/* TITLE-ANIMATED */}
                 <h2>
                     {animateTitle ? (
                         <AnimatedLetters
@@ -65,7 +58,8 @@ const About = () => {
                 </h2>
 
                 <div className="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-3">
-                    <div className="col">
+                    {/* IMAGE */}
+                    <div className="col" >
                         <img
                             src={yo}
                             alt="photo_perfil"
@@ -73,7 +67,7 @@ const About = () => {
                             data-aos="fade-right"
                         />
                     </div>
-
+                    {/* PARAGRAPH */}
                     <div className="col" data-aos="fade-left">
                         <p>
                             Hola, soy Full Stack Developer con background en
@@ -99,6 +93,7 @@ const About = () => {
                             autonomía.
                         </p>
                     </div>
+                    {/* BUTTON */}
                     <div className="col" data-aos="fade-up">
                         <a className={s.btn_2} href={pdf} target="_blank">
                             RESUME - PDF

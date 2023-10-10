@@ -8,6 +8,7 @@ import "./Contact.scss";
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState("text-animate");
+    const [animateTitle, setAnimateTitle] = useState(false);
     const currentForm = useRef();
     const [input, setInput] = useState({
         name: "",
@@ -17,9 +18,25 @@ const Contact = () => {
     });
 
     useEffect(() => {
-        setTimeout(() => {
-            setLetterClass("text-animate-hover");
-        }, 3500);
+        const handleScroll = () => {
+            const aboutSection = document.getElementById("about");
+            if (!aboutSection) return;
+            // devuelve el tamaño del elemento y su posicion relativa
+            const rect = aboutSection.getBoundingClientRect();
+
+            // Verifica si la parte superior de la sección está en el campo de visión
+            if (rect.top <= window.innerHeight * 0.4) {
+                setAnimateTitle(true);
+            } else {
+                setAnimateTitle(false);
+            }
+        };
+            //agrego escuchador al scroll
+            window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
     const handlerChange = (e) => {
@@ -68,22 +85,25 @@ const Contact = () => {
             <div className="container contact-page">
                 <div className="contact-title text-center">
                     <h2>
-                        <AnimatedLetters
-                            letterClass={letterClass}
-                            strArray={[
-                                "C",
-                                "O",
-                                "N",
-                                "T",
-                                "A",
-                                "C",
-                                "T",
-                                " ",
-                                "M",
-                                "E",
-                            ]}
-                            idx={15}
-                        />
+                    {
+                        animateTitle ? 
+                            (<AnimatedLetters
+                                letterClass={letterClass}
+                                strArray={[
+                                    "C",
+                                    "O",
+                                    "N",
+                                    "T",
+                                    "A",
+                                    "C",
+                                    "T",
+                                    " ",
+                                    "M",
+                                    "E",
+                                ]}
+                                idx={15}
+                            />) : (null)
+                    }
                     </h2>
                     <div className="contact-form">
                         <form ref={currentForm} onSubmit={sendEmail}>

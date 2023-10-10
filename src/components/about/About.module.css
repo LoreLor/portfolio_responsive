@@ -60,13 +60,13 @@
     background: linear-gradient(#cfaa8c,#021c2c);
     filter:contrast(1.08);
     margin: 1rem auto;
-    animation:fadeIn 12s ;
+    animation:fadeIn 20s ;
 }
 
 .about_text p {
     color: var(--white-color);
     padding: 0.3rem 2rem;
-    animation:fadeIn 10s ;
+    animation:fadeIn 20s ;
 }
 
 .btn_2 {
@@ -83,6 +83,7 @@
     margin-right: 2rem;
     transition: var(--transition);
     border-radius: 2em 0;
+    animation:fadeIn 20s;
 }
 
 .btn_2:hover {
@@ -126,12 +127,12 @@
     }
 
     .about_text img {
-        width: 17rem;
-        height:17rem;
+        width: 16rem;
+        height:16rem;
         justify-content: center;
         align-items: center;
         margin-left: 10rem;
-        margin-top:2rem;
+        margin-top:1rem;
     }
 
     .about_text p {
@@ -154,7 +155,7 @@
 
     .btn_2{
         margin-left: 11rem;
-        margin-top: -7rem;
+        margin-top: -6rem;
     }
 
 }
@@ -162,6 +163,9 @@
 @media screen and (min-width: 1300px){
     .btn_2{
         margin-left: 11rem;
-        margin-top: -2rem;
+        margin-top: -5rem;
+    }
+    .about_page::after {
+        bottom: 1rem;
     }
 }
