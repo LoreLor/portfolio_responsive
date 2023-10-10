@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import About from "./components/about/About";
@@ -10,14 +11,10 @@ import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
-
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
-
 
 function App() {
-
     useEffect(() => {
         AOS.init({
             duration: 3000,

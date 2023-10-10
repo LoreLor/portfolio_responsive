@@ -19,23 +19,18 @@ const Home = () => {
         <section className={`container ${s.home_page}`} id="home">
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3">
                 <div className="col">
-                    <h1 className={s.card_title} data-aos="fade-right">
+                    <h1 className={s.card_title}>
                         <span className={letterClass}>H</span>
                         <span className={`${letterClass} _12`}>i,</span>
                         <br />
                         <span className={`${letterClass} _13`}>I'</span>
                         <span className={`${letterClass} _14`}>m</span>
-                        {/* <img 
-                                    src={logoTitle} 
-                                    alt="Logo de L" 
-                                /> */}
                         <AnimatedLetters
                             letterClass={letterClass}
                             strArray={nameArray}
                             idx={15}
                         />
                         <br />
-
                         <AnimatedLetters
                             letterClass={letterClass}
                             strArray={jobArray}
@@ -48,7 +43,7 @@ const Home = () => {
                             idx={13}
                         />
                     </h1>
-                    <a href="#contact" className={s.flat_button} data-aos="fade-up">
+                    <a href="#contact" className={s.flat_button}>
                         CONTACT ME
                     </a>
                 </div>
