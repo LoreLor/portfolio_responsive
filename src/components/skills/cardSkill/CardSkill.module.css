@@ -8,16 +8,16 @@
     --white-color: #d2d4d6;
     --transition: all 0.3s ease-out;
 }
+
 .wrapper_card{
     display: flex;
     justify-content: center;
+    align-content: center;
     align-items: center;
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
     box-shadow: 0px 0px 20px  rgba(0, 12, 12);
     border-radius: 6px;
-    margin: 30px;
-   
     border-top: 1px solid #0fe5ec;;
     border-left: 1px solid #0fe5ec;;
     cursor: pointer;
@@ -25,6 +25,7 @@
     transform-style: preserve-3d;
     transition: var(--transition);
     position: relative;
+    margin:0 auto;
 }
 
 
@@ -37,7 +38,6 @@
     transition: var(--transition);
     background-color: #09ebf360;
     border-radius: 5px;
-    gap: 2rem;
     transform: translateZ(30px);
 }
 
@@ -46,11 +46,11 @@
 }
 
 .card_content figcaption {
-    color: var(--orange-color);
-    font-size: 1.1rem;
+    color: var(--dark-blue);
+    font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .bg{

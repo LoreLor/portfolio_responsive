@@ -1,70 +1,18 @@
 import React, { useEffect, useState } from "react";
-import Loader from "react-loaders";
-import TagCloud from "TagCloud";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
+import VanillaTilt from "vanilla-tilt";
+import CardSkill from "./cardSkill/CardSkill";
 //import { useDispatch, useSelector } from "react-redux";
 //import { getSkills } from "../../redux/actions/skill";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faAngular,
-    faHtml5,
-    faJava,
-    faJs,
-    faNodeJs,
-    faReact,
-} from "@fortawesome/free-brands-svg-icons";
-import "./Skills.css";
+
+import image from "../../assets/images/react-trnsparente.png";
 import s from "./Skills.module.css";
 
-const textContent = ".tags";
-const texts = [
-    "3D",
-    "TagCloud",
-    "JavaScript",
-    "CSS3",
-    "Animation",
-    "Interactive",
-    "Mouse",
-    "Rolling",
-    "Sphere",
-    "3D",
-    "TagCloud",
-    "JavaScript",
-    "CSS3",
-    "Animation",
-    "Interactive",
-    "6KB",
-    "v2.x",
-    "react",
-    "redux",
-    "angular",
-    "springBoot",
-];
-// const options = {
-//     radius: 130,
-//     // animation speed
-//     // slow, normal, fast
-//     maxSpeed: "normal",
-//     initSpeed: "slow",
-//     // 0 = top
-//     // 90 = left
-//     // 135 = right-bottom
-//     direction: 90,
-//     // interact with cursor move on mouse out
-//     keep: true,
-// };
 
 const Skills = () => {
     //const dispatch = useDispatch();
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
-    const [tagCloudOptions, setTagCloudOptions] = useState({
-        radius: window.innerWidth >= 768 ? 200 : 135, // Cambia el radio según el ancho de la pantalla
-        maxSpeed: "normal",
-        initSpeed: "slow",
-        direction: 135,
-        keep: true,
-    });
 
     useEffect(() => {
         const handleScroll = () => {
@@ -72,7 +20,6 @@ const Skills = () => {
             if (!aboutSection) return;
             // devuelve el tamaño del elemento y su posicion relativa
             const rect = aboutSection.getBoundingClientRect();
-
             // Verifica si la parte superior de la sección está en el campo de visión
             if (rect.top <= window.innerHeight * 0.4) {
                 setAnimateTitle(true);
@@ -82,50 +29,33 @@ const Skills = () => {
         };
         //agrego escuchador al scroll
         window.addEventListener("scroll", handleScroll);
-
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
     useEffect(() => {
-        //dispatch(getSkills());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    //const skills = useSelector((state) => state.skill.allSkills);
-
-    useEffect(() => {
-        function handleResize() {
-            // responsive del tag
-            const newRadius = window.innerWidth >= 1024 ? 230 : 140;
-            setTagCloudOptions({
-                ...tagCloudOptions,
-                radius: newRadius,
+        const wrapper = document.querySelectorAll(".wrapper");
+        //console.log("Wrappers:", wrapper);
+        if (wrapper) {
+            wrapper.forEach((wrapp) => {
+                VanillaTilt.init(wrapp, {
+                    max: 25,
+                    speed: 400,
+                    glare: true,
+                    "max-glare": 0.3,
+                });
             });
+
+            return () => {
+                Array.from(wrapper).forEach((wrapp) => {
+                    if (wrapp.vanillaTilt) {
+                        wrapp.vanillaTilt.destroy();
+                    }
+                });
+            };
         }
-        // escucha cambio de tamaño
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            //limpia el escuchador
-            window.removeEventListener("resize", handleResize);
-        };
-    }, [tagCloudOptions]);
-
-    useEffect(() => {
-        const newArray = texts.map((s) => s);
-        const tagcloudInstance = new TagCloud(
-            textContent,
-            newArray,
-            tagCloudOptions
-        );
-
-        return () => {
-            // elimina el tag cuando se desmonta
-            tagcloudInstance.destroy();
-        };
-    }, [texts, tagCloudOptions]);
+    }, []);
 
     return (
         <section id="skills">
@@ -151,8 +81,80 @@ const Skills = () => {
                         ) : null}
                     </h2>
                 </div>
-                <div className={s.tags_content}>
-                    <span className={`${s.tags} tags`} />
+                <div className="container">
+
+                    <div className="row row-cols-2 row-cols-md-4 row-cols-lg-5  g-4 align-content-center justify-content-center align-items-center mt-2">
+                        <div className="col">
+                            <CardSkill
+                                name={"React"}
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name={"React2"}
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name="React4"
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name="React5"
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name="React6"
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name="React7"
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name="React8"
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name="React8"
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name="React8"
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                        <div className="col">
+                            <CardSkill
+                                name="React8"
+                                image={image}
+                                className="wrapper"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

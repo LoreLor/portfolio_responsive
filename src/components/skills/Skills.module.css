@@ -17,6 +17,10 @@
     
 }
 
+.skill_container {
+    margin:0 auto;
+}
+
 .skills_page::before {
     content: '<section id="skills">';
     font-family: 'La Belle Aurore';
@@ -36,7 +40,7 @@
     color: var(--orange-color);
     font-size: 1.2rem;
     position: absolute;
-    bottom: 0;
+    bottom: -3rem;
     left: 2rem;
     animation: fadeIn 2s 1.7s backwards;
     opacity: 0.6;
@@ -54,17 +58,6 @@
 }
 
 
-.tags_content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color:var(--orange-color);
-    font-family: sans-serif;
-    animation: fadeIn 6s;
-    animation-timing-function: ease-in-out;
-    margin-top: 3rem;
-}
 
 @media screen and (min-width:1024px){
     .skill_text h2{
@@ -80,10 +73,6 @@
         font-size: 2rem;
         left: 1rem !important;
         bottom: 0.5rem;
-    }
-
-    .tags_content {
-        margin-top: 1.2rem;
     }
 
 }
