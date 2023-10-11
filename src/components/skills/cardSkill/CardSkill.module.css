@@ -18,35 +18,34 @@
     border-radius: 6px;
     margin: 30px;
     background: rgba(247, 131, 36, 0.753);
-    overflow: hidden;
     border-top: 3px solid rgb(247, 131, 36, 0.5);
     border-left: 3px solid rgb(247, 131, 36, 0.5);
     cursor: pointer;
     perspective: 1000px;
-    position: relative;
-    perspective: 1000px;
     transition: var(--transition);
+    position: relative;
 }
 
 
 .card_content {
+    position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
     align-items: center;
     flex-direction: column;
-    transition: var(--transition);
-    transform: rotateX(0deg) rotateY(0deg);
-    perspective: 1000px;
     transform-style: preserve-3d;
+    transition: var(--transition);
+    transform: translateZ(10rem);
+    z-index: 3;
     gap: 2rem;
 }
 
+
+
 .card_content img {
-    align-items: center;
     width: 100%;
-    transform-style: preserve-3d;
-    will-change: transform;
+  
 }
 
 .card_content figcaption {
@@ -55,12 +54,11 @@
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-weight: 600;
-    z-index: 1;
-    transform: translateZ(30px) 
+
 }
 
 .bg{
-    background: rgba(0, 12, 12, 0.5);;
+    background: rgba(0, 0, 0, 0.5);;
     position: absolute;
     top:0;
     filter: brightness(100%) blur(20px);
