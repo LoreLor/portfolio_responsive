@@ -1,0 +1,70 @@
+:root {
+    --dark-blue: #040F16;
+    --middle-blue: #0a82a7;
+    --light-blue: #0fe5ec;
+    --light-blue-transparent: #0fe5ec31;
+    --orange-color:#f78324; 
+    --light-orange: #f0c6a4;
+    --white-color: #d2d4d6;
+    --transition: all 0.3s ease-out;
+}
+.wrapper_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 0px 0px 20px  rgba(0, 12, 12);
+    border-radius: 6px;
+    margin: 30px;
+    background: rgba(247, 131, 36, 0.753);
+    overflow: hidden;
+    border-top: 3px solid rgb(247, 131, 36, 0.5);
+    border-left: 3px solid rgb(247, 131, 36, 0.5);
+    cursor: pointer;
+    perspective: 1000px;
+    position: relative;
+    perspective: 1000px;
+    transition: var(--transition);
+}
+
+
+.card_content {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    transition: var(--transition);
+    transform: rotateX(0deg) rotateY(0deg);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    gap: 2rem;
+}
+
+.card_content img {
+    align-items: center;
+    width: 100%;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.card_content figcaption {
+    color: var(--white-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    z-index: 1;
+    transform: translateZ(30px) 
+}
+
+.bg{
+    background: rgba(0, 12, 12, 0.5);;
+    position: absolute;
+    top:0;
+    filter: brightness(100%) blur(20px);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}

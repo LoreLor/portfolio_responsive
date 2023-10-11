@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import CardSkill from "./components/skills/cardSkill/CardSkill";
 
 function App() {
     useEffect(() => {
@@ -30,7 +31,7 @@ function App() {
             <div className="separator"></div>
             <About />
             <div className="separator"></div>
-            <Skills />
+            <CardSkill />
             <div className="separator"></div>
             <Projects />
             <div className="separator"></div>
