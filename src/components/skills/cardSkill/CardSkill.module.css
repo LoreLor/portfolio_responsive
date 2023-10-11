@@ -17,11 +17,12 @@
     box-shadow: 0px 0px 20px  rgba(0, 12, 12);
     border-radius: 6px;
     margin: 30px;
-    background: rgba(247, 131, 36, 0.753);
-    border-top: 3px solid rgb(247, 131, 36, 0.5);
-    border-left: 3px solid rgb(247, 131, 36, 0.5);
+   
+    border-top: 1px solid #0fe5ec;;
+    border-left: 1px solid #0fe5ec;;
     cursor: pointer;
     perspective: 1000px;
+    transform-style: preserve-3d;
     transition: var(--transition);
     position: relative;
 }
@@ -29,36 +30,31 @@
 
 .card_content {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 70%;
     text-align: center;
     align-items: center;
     flex-direction: column;
-    transform-style: preserve-3d;
     transition: var(--transition);
-    transform: translateZ(10rem);
-    z-index: 3;
+    background-color: #09ebf360;
+    border-radius: 5px;
     gap: 2rem;
+    transform: translateZ(30px);
 }
-
-
 
 .card_content img {
     width: 100%;
-  
 }
 
 .card_content figcaption {
-    color: var(--white-color);
+    color: var(--orange-color);
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-weight: 600;
-
 }
 
 .bg{
-    background: rgba(0, 0, 0, 0.5);;
+    background: rgba(236, 150, 50, 0.116);;
     position: absolute;
     top:0;
     filter: brightness(100%) blur(20px);
