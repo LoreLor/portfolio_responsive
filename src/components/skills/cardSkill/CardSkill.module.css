@@ -54,7 +54,7 @@
 }
 
 .bg{
-    background: rgba(236, 150, 50, 0.116);;
+    background: rgba(211, 119, 14, 0.116);;
     position: absolute;
     top:0;
     filter: brightness(100%) blur(20px);
