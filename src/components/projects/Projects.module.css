@@ -23,7 +23,7 @@
     position: absolute;
     opacity: 0.6;
     left: 2rem;
-    top: 1rem;
+    top: -2rem;
     animation: fadeIn 2s 1.7s backwards;
     transition: var(--transition);
 }
@@ -34,7 +34,7 @@
     color: #f78324;
     font-size: 1.2rem;
     position: absolute;
-    bottom: -7rem;
+    bottom: -3rem;
     left: 2rem;
     animation: fadeIn 2s 1.7s backwards;
     opacity: 0.6;
@@ -47,8 +47,8 @@
     font-family:'Coolvetica-R';
     letter-spacing: 0.4rem;
     font-weight: 500;
-    margin-top: -3rem;
-    padding: 4rem 0 0 0;
+    margin-top: -2rem;
+    padding: 1rem 0 0 0;
     text-align: center;
 }
 

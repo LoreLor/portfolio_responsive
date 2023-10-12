@@ -17,7 +17,7 @@
 }
 
 .skill_container {
-    margin:0 auto;
+    margin: 2rem auto;
 }
 
 .skills_page::before {
@@ -28,7 +28,7 @@
     position: absolute;
     opacity: 0.6;
     left: 2rem;
-    top: 1rem;
+    top: 0rem;
     animation: fadeIn 2s 1.7s backwards;
     transition: var(--transition);
 }
@@ -39,7 +39,7 @@
     color: var(--orange-color);
     font-size: 1.2rem;
     position: absolute;
-    bottom: -3rem;
+    bottom: -2rem;
     left: 2rem;
     animation: fadeIn 2s 1.7s backwards;
     opacity: 0.6;
@@ -52,7 +52,7 @@
     font-family:'Coolvetica-R';
     letter-spacing: 0.4rem;
     font-weight: 500;
-    padding: 5rem 0 0 0;
+    padding: 3rem 0 0 0;
     text-align: center;
 }
 
