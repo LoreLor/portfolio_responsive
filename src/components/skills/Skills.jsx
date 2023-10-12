@@ -81,9 +81,8 @@ const Skills = () => {
                         ) : null}
                     </h2>
                 </div>
-                <div className="container">
-
-                    <div className="row row-cols-2 row-cols-md-4 row-cols-lg-5  g-4 align-content-center justify-content-center align-items-center mt-2">
+                <div className={`container ${s.skill_container}`}>
+                    <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4  g-4 align-content-center justify-content-center align-items-center mt-2">
                         <div className="col">
                             <CardSkill
                                 name={"React"}

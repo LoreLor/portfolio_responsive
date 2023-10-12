@@ -14,7 +14,6 @@
 .skills_page {
     position: relative;
     min-height: 100vh;
-    
 }
 
 .skill_container {
@@ -60,11 +59,22 @@
 
 
 @media screen and (min-width:1024px){
+    .skills_page{
+        margin-bottom: 5rem;
+    }
+
+    .skill_container{
+        padding-bottom: 2rem !important;
+        min-height: 100vh;
+    }
+    
     .skill_text h2{
         font-size: 2rem;
+        padding-top:2rem;
     }
 
     .skills_page::before{
+        top:-1rem;
         font-size: 2rem;
         left: 1rem !important;
     }
@@ -72,7 +82,9 @@
     .skills_page::after {
         font-size: 2rem;
         left: 1rem !important;
-        bottom: 0.5rem;
+        bottom: -5rem;
     }
+
+    
 
 }
