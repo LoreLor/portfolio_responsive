@@ -36,7 +36,7 @@
     align-items: center;
     flex-direction: column;
     transition: var(--transition);
-    background-color: #09ebf360;
+    background-color: #09f3f363;
     border-radius: 5px;
     transform: translateZ(30px);
 }
