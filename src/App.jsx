@@ -13,14 +13,25 @@ import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useDispatch, useSelector } from "react-redux";
+import { allProjects } from "./store/actions/projects";
 
 
 function App() {
+    const dispatch = useDispatch();
+    const projects = useSelector(state => state.projects)
+    console.log('project :>> ', projects);
+
+
     useEffect(() => {
         AOS.init({
             duration: 3000,
         });
     },[]);
+
+    useEffect(() => {
+        dispatch(allProjects())
+    }, []);
 
     return (
         <>

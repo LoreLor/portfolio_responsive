@@ -1,0 +1,8 @@
+export const GET_PROJECTS = 'GET_PROJECTS';
+export const GET_PROJECTS_BY_ID = 'GET_PROJECTS_BY_ID';
+export const POST_PROJECT = 'POST_PROJECT';
+export const PUT_PROJECT = 'PUT_PROJECT';
+export const DELETE_PROJECT = 'DELETE_PROJECT';
+
+
+

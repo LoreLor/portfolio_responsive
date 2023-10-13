@@ -1,14 +1,10 @@
-import { compose, legacy_createStore as createStore, applyMiddleware} from 'redux'
 import { combineReducers } from "redux";
-import thunk from 'redux-thunk'
+import { projectReducer } from './projectReducer';
 
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+export default combineReducers({
+        projects: projectReducer,
+})
 
-const store = createStore(
-    combineReducers({
-       
-    }),
-    composeEnhancer(applyMiddleware(thunk)))
 
-export default store
+
