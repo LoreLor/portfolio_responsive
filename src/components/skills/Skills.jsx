@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import VanillaTilt from "vanilla-tilt";
 import CardSkill from "./cardSkill/CardSkill";
@@ -7,13 +7,18 @@ import CardSkill from "./cardSkill/CardSkill";
 
 import image from "../../assets/images/react-trnsparente.png";
 import s from "./Skills.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { allSkills } from "../../store/actions/skills";
 
 
 const Skills = () => {
-    //const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const skills = useSelector(state => state.skills.skills)
+    
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
 
+    // Efecto animatedLetter de los titulos
     useEffect(() => {
         const handleScroll = () => {
             const aboutSection = document.getElementById("about");
@@ -34,6 +39,8 @@ const Skills = () => {
         };
     }, []);
 
+
+    // Efecto tilt de la card
     useEffect(() => {
         const wrapper = document.querySelectorAll(".wrapper");
         //console.log("Wrappers:", wrapper);
@@ -56,6 +63,13 @@ const Skills = () => {
             };
         }
     }, []);
+
+    
+    useEffect(() => {
+        dispatch(allSkills())
+    }, []);
+
+
 
     return (
         <section id="skills">
@@ -83,76 +97,20 @@ const Skills = () => {
                 </div>
                 <div className={`container ${s.skill_container}`}>
                     <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4  g-4 align-content-center justify-content-center align-items-center mt-2">
-                        <div className="col">
-                            <CardSkill
-                                name={"React"}
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name={"React2"}
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name="React4"
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name="React5"
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name="React6"
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name="React7"
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name="React8"
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name="React8"
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name="React8"
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
-                        <div className="col">
-                            <CardSkill
-                                name="React8"
-                                image={image}
-                                className="wrapper"
-                            />
-                        </div>
+                        {
+                            skills && skills.map(s => (
+                                <Fragment key={s.name}>
+                                    <div className="col">
+                                        <CardSkill
+                                            name={s.name}
+                                            image={s.image}
+                                            className="wrapper"
+                                        />
+                                    </div>
+                                </Fragment>
+                            ))
+                        }
+                        
                     </div>
                 </div>
             </div>

@@ -15,6 +15,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
 import { allProjects }  from "./store/actions/projects";
+import { allSkills } from "./store/actions/skills";
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
     },[]);
 
     useEffect(() => {
-        dispatch(allProjects())
+        dispatch(allProjects());
+        dispatch(allSkills())
     }, []);
 
     return (
