@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { allProjects }  from "./store/actions/projects";
 import { allSkills } from "./store/actions/skills";
 

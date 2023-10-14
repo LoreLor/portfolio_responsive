@@ -39,6 +39,9 @@ const Skills = () => {
         };
     }, []);
 
+    useEffect(() => {
+        dispatch(allSkills())
+    }, []);
 
     // Efecto tilt de la card
     useEffect(() => {
@@ -65,9 +68,6 @@ const Skills = () => {
     }, []);
 
     
-    useEffect(() => {
-        dispatch(allSkills())
-    }, []);
 
 
 
@@ -96,18 +96,16 @@ const Skills = () => {
                     </h2>
                 </div>
                 <div className={`container ${s.skill_container}`}>
-                    <div className="row row-cols-2 row-cols-md-4 row-cols-lg-4  g-4 align-content-center justify-content-center align-items-center mt-2">
+                    <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4  g-4 align-content-center justify-content-center align-items-center mt-2">
                         {
-                            skills && skills.map(s => (
-                                <Fragment key={s.name}>
-                                    <div className="col">
-                                        <CardSkill
-                                            name={s.name}
-                                            image={s.image}
-                                            className="wrapper"
-                                        />
-                                    </div>
-                                </Fragment>
+                            skills && skills.map((s, index) => (
+                                <div className="col" key={s.name} data-aos= {index % 2 === 0 ? 'fade-up': 'fade-down'}>
+                                    <CardSkill
+                                        name={s.name}
+                                        image={s.image}
+                                        className="wrapper"
+                                    />
+                                </div>
                             ))
                         }
                         

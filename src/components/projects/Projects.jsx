@@ -72,21 +72,19 @@ const Projects = () => {
                     </h2>
                     
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">
-                        { projects && projects.map(p => {
+                        { projects && projects.map((p, index) => {
                             return (
-                                <Fragment key={p.name}>
-                                    <div className="col">
-                                        <CardProject
-                                            name={p.name} 
-                                            image={p.image}
-                                            description={p.descriprion} 
-                                            stack={p.stack}
-                                            deploy={p.deploy}
-                                            demo={p.demo}
-                                            github={p.github}
-                                        />
-                                    </div>
-                                </Fragment>
+                                <div className="col" key={p.name} data-aos={index % 2 === 0 ? 'fade-up' : 'fade-down'}>
+                                    <CardProject
+                                        name={p.name} 
+                                        image={p.image}
+                                        description={p.descriprion} 
+                                        stack={p.stack}
+                                        deploy={p.deploy}
+                                        demo={p.demo}
+                                        github={p.github}
+                                    />
+                                </div>
                             )
                         }) 
                         }
