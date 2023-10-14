@@ -1,4 +1,4 @@
-import { GET_PROJECTS } from "../actions/projects/ationTypes";
+import { GET_PROJECTS, GET_PROJECTS_BY_ID } from "../actions/projects/ationTypes";
 
 const initalState = {
     projects: [],
@@ -11,7 +11,14 @@ export function projectReducer(state=initalState, action) {
             return {
                 ...state,
                 projects: action.payload
+            };
+
+        case GET_PROJECTS_BY_ID:
+            return {
+                ...state,
+                detailProject: action.payload
             }
+
 
         default:
             return state;

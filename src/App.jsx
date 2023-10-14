@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import About from "./components/about/About";
@@ -6,16 +7,15 @@ import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
+import { allProjects }  from "./store/actions/projects";
+import { allSkills } from "./store/actions/skills";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useDispatch } from "react-redux";
-import { allProjects }  from "./store/actions/projects";
-import { allSkills } from "./store/actions/skills";
+import './index.css';
 
 
 function App() {

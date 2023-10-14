@@ -13,7 +13,7 @@ import { Fragment } from "react";
 const Projects = () => {
     const dispatch = useDispatch();
     const projects = useSelector(state => state.projects.projects)
-    console.log('projectos :>> ', projects);
+   
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
 

@@ -46,7 +46,7 @@ const Skills = () => {
     // Efecto tilt de la card
     useEffect(() => {
         const wrapper = document.querySelectorAll(".wrapper");
-        //console.log("Wrappers:", wrapper);
+        
         if (wrapper) {
             wrapper.forEach((wrapp) => {
                 VanillaTilt.init(wrapp, {
