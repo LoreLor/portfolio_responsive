@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
-//import { useDispatch } from "react-redux";
-import AnimatedLetters from "../animatedLetters/AnimatedLetters";
+import { useDispatch, useSelector } from "react-redux";
 import CardProject from "./card_project/CardProject";
-//import { allProjects } from "../../redux/actions/project";
+import { allProjects } from "../../store/actions/projects";
+import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import s from './Projects.module.css';
-import mockImage from '../../assets/images/ecommerce_pf.png'
+import { Fragment } from "react";
+
 
 
 
 
 const Projects = () => {
-    //const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const projects = useSelector(state => state.projects.projects)
+    console.log('projectos :>> ', projects);
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
 
-    //useEffect(() => {
-        //dispatch(allProjects());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    //}, []);
+    useEffect(() => {
+        dispatch(allProjects());
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -70,61 +72,24 @@ const Projects = () => {
                     </h2>
                     
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">
-                        <div className="col">
-                            <CardProject
-                                name='Lorena' 
-                                image={mockImage}
-                                description='lorenanansnndasdbdsjdgsjgjsghjsfgajsgfas' 
-                                stack='ashkashkash sasdhsadhsa jsdks' 
-                                deploy='dsdsdsd'
-                                demo='fsdf'
-                                github='sdfsdf'
-                            />
-                        </div>
-                        <div className="col">
-                            <CardProject
-                                name='Lorena' 
-                                image="../src/assets/images/ecommerce_pf.png"
-                                description='lorenanansnndasdbdsjdgsjgjsghjsfgajsgfas' 
-                                stack='ashkashkash sasdhsadhsa jsdks' 
-                                deploy='dsdsdsd'
-                                demo=''
-                                github=''
-                            />
-                        </div>
-                        <div className="col">
-                            <CardProject
-                                name='Lorena' 
-                                image="../src/assets/images/ecommerce_pf.png"
-                                description='lorenanansnndasdbdsjdgsjgjsghjsfgajsgfas' 
-                                stack='ashkashkash sasdhsadhsa jsdks' 
-                                deploy='dsdsdsd'
-                                demo=''
-                                github=''
-                            />
-                        </div>
-                        <div className="col">
-                            <CardProject
-                                name='Lorena' 
-                                image="../src/assets/images/ecommerce_pf.png"
-                                description='lorenanansnndasdbdsjdgsjgjsghjsfgajsgfas' 
-                                stack='ashkashkash sasdhsadhsa jsdks' 
-                                deploy='dsdsdsd'
-                                demo=''
-                                github=''
-                            />
-                        </div>
-                        <div className="col">
-                            <CardProject
-                                name='Lorena' 
-                                image={mockImage}
-                                description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nesciunt ea animi sed voluptate aperiam eum'
-                                stack='ashkashkash sasdhsadhsa jsdks' 
-                                deploy='dsdsdsd'
-                                demo=''
-                                github=''
-                            />
-                        </div>
+                        { projects && projects.map(p => {
+                            return (
+                                <Fragment key={p.name}>
+                                    <div className="col">
+                                        <CardProject
+                                            name={p.name} 
+                                            image={p.image}
+                                            description={p.descriprion} 
+                                            stack={p.stack}
+                                            deploy={p.deploy}
+                                            demo={p.demo}
+                                            github={p.github}
+                                        />
+                                    </div>
+                                </Fragment>
+                            )
+                        }) 
+                        }
                     </div>
                 </div>
             </div>
