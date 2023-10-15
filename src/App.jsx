@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import About from "./components/about/About";
@@ -12,6 +13,7 @@ import { allSkills } from "./store/actions/skills";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer } from "react-toastify";
+
 import 'react-toastify/dist/ReactToastify.css';
 import AOS from "aos";
 import "aos/dist/aos.css";

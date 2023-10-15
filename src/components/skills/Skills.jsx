@@ -17,6 +17,9 @@ const Skills = () => {
     
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
+    useEffect(() => {
+        dispatch(allSkills())
+    }, []);
 
     // Efecto animatedLetter de los titulos
     useEffect(() => {
@@ -39,9 +42,6 @@ const Skills = () => {
         };
     }, []);
 
-    useEffect(() => {
-        dispatch(allSkills())
-    }, []);
 
     // Efecto tilt de la card
     useEffect(() => {
@@ -66,9 +66,6 @@ const Skills = () => {
             };
         }
     }, []);
-
-    
-
 
 
     return (

@@ -1,4 +1,4 @@
-import { GET_PROJECTS, GET_PROJECTS_BY_ID, POST_PROJECT, PUT_PROJECT } from "../actions/projects/ationTypes";
+import { DELETE_PROJECT, GET_PROJECTS, GET_PROJECTS_BY_ID, POST_PROJECT, PUT_PROJECT } from "../actions/projects/ationTypes";
 
 const initalState = {
     projects: [],
