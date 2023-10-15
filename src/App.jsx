@@ -29,6 +29,12 @@ function App() {
         dispatch(allSkills());
     }, []);
 
+    useEffect(() => {
+        AOS.init({
+            duration: 3000,
+        });
+    },[]);
+
     return (
         <>
             <ToastContainer />

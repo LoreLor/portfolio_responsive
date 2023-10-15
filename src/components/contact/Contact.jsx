@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Loader from "react-loaders";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";

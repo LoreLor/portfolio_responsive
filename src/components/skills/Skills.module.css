@@ -1,3 +1,4 @@
+@import 'animate.css';
 :root {
     --dark-blue: #040F16;
     --middle-blue: #0a82a7;
@@ -19,6 +20,8 @@
 .skill_container {
     margin: 2rem auto;
 }
+
+
 
 .skills_page::before {
     content: '<section id="skills">';

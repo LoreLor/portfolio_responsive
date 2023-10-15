@@ -9,7 +9,7 @@ import image from "../../assets/images/react-trnsparente.png";
 import s from "./Skills.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { allSkills } from "../../store/actions/skills";
-import Aos from "aos";
+
 
 
 const Skills = () => {
@@ -44,11 +44,7 @@ const Skills = () => {
         dispatch(allSkills())
     }, []);
 
-    useEffect(() => {
-        Aos.init({
-            duration: 3000,
-        });
-    },[]);
+   
 
     // Efecto tilt de la card
     useEffect(() => {
