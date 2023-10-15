@@ -9,6 +9,7 @@ import image from "../../assets/images/react-trnsparente.png";
 import s from "./Skills.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { allSkills } from "../../store/actions/skills";
+import Aos from "aos";
 
 
 const Skills = () => {
@@ -17,9 +18,6 @@ const Skills = () => {
     
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
-    useEffect(() => {
-        dispatch(allSkills())
-    }, []);
 
     // Efecto animatedLetter de los titulos
     useEffect(() => {
@@ -42,6 +40,15 @@ const Skills = () => {
         };
     }, []);
 
+    useEffect(() => {
+        dispatch(allSkills())
+    }, []);
+
+    useEffect(() => {
+        Aos.init({
+            duration: 3000,
+        });
+    },[]);
 
     // Efecto tilt de la card
     useEffect(() => {
@@ -66,6 +73,9 @@ const Skills = () => {
             };
         }
     }, []);
+
+    
+
 
 
     return (
@@ -96,7 +106,7 @@ const Skills = () => {
                     <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4  g-4 align-content-center justify-content-center align-items-center mt-2">
                         {
                             skills && skills.map((s, index) => (
-                                <div className="col" key={s.name} data-aos= {index % 2 === 0 ? 'fade-up': 'fade-down'}>
+                                <div className="col" key={s.name}>
                                     <CardSkill
                                         name={s.name}
                                         image={s.image}
