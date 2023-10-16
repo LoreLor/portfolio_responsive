@@ -23,7 +23,7 @@
     position: absolute;
     opacity: 0.6;
     left: 2rem;
-    top: -1rem;
+    top: 0;
     animation: fadeIn 2s 1.7s backwards;
     transition: var(--transition);
 }
@@ -34,7 +34,7 @@
     color: var(--orange-color);
     font-size: 1.2rem;
     position: absolute;
-    bottom: 4rem;
+    bottom: 3rem;
     left: 2rem;
     animation: fadeIn 2s 1.7s backwards;
     opacity: 0.6;
@@ -49,8 +49,9 @@
     font-family:'Coolvetica-R';
     letter-spacing: 0.4rem;
     font-weight: 500;
-    margin-top: -3rem;
-    padding: 2rem 0 0 0;
+    margin-top: -4rem;
+    padding: 4rem 0 0 0;
+    text-transform: uppercase;
 }
 
 
@@ -78,8 +79,7 @@
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    border: 0 ;
-    background-color: var(--light-orange);
+    border: none ;
     height: 40px;
     font-size: 16px;
     font-weight: 500;
@@ -91,21 +91,19 @@ input[type="password"] {
 
 .flat_button {
     color: var(--orange-color);
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 0.5rem;
     text-decoration: none;
-    padding: 8px 10px;
+    padding: 8px 15px;
     border: 1px solid var(--orange-color);
-    float: left;
-    border-radius: 4px;
-    background: 0 0;
-    text-transform: uppercase;
     float: right;
+    background-color: transparent;
+    text-transform: uppercase;
     text-align: center;
     margin-right: 10px;
     margin-top: 8px;
-    border-radius: 2em 0;
-    transition: 0.3s all;
+    border-radius: 2rem 0;
+    transition: var(--transition);
 }
 
 .flat_button:hover {
@@ -113,7 +111,33 @@ input[type="password"] {
     color: var(--dark-blue);
 }
 
-.flat_button .active{
-    transform: scale(0.89);
+.flat_button:active{
+    transform: scale(0.8);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+@media screen and (min-width: 768px) {
+    .signin_page::before{
+        font-size: 1.8rem !important;
+    }
+
+    .signin_page::after{
+        font-size: 1.8rem !important;
+    }
+
+    .signin_title h1{
+        font-size: 2rem; 
+        margin-top: 4rem;
+    }
+
+    .signin_form {
+        width: 70%;
+        margin: 4rem auto;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        height: 3rem;
+        font-size: 1.3rem;
+    }
 }
