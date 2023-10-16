@@ -40,7 +40,6 @@ function App() {
             <ToastContainer />
             <div className="separator"></div>
             <Routes>
-                <Route path="/login" element={<Login />} />
                 {/* <Route path="/login/dashboard" element={<Dashboard />} /> */}
                 <Route
                     path="/"
@@ -69,6 +68,7 @@ function App() {
                         </>
                     }
                 />
+                <Route exact path="login" element={<Login />} />
             </Routes>
         </>
     );
