@@ -1,0 +1,108 @@
+
+:root {
+    --dark-blue: #040F16;
+    --middle-blue: #0a82a7;
+    --light-blue: #0fe5ec;
+    --light-blue-transparent: #0fe5ec31;
+    --orange-color:#f78324; 
+    --light-orange: #f0c6a4;
+    --white-color: #d2d4d6;
+    --transition: all 0.3s ease-out;
+}
+
+.accordion {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+
+    &-item {
+        background-color: var(--light-orange);
+    }
+    &-header {
+        background-color: var(--light-orange);
+    }
+
+    .accordion-button {
+        background-color: var(--orange-color);
+        color:var(--dark-blue);
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .attributes {
+        max-width: 100%;
+        overflow: auto;
+
+        table {
+            width: 75%;
+            margin: 0 auto;
+            max-width: 100%;
+            font-size: 14px;
+        }
+
+        table td, table th{
+            font-size: 0.7rem;
+            text-wrap: wrap;
+        }
+    }
+
+    .btn1 {
+        border-color: var(--orange-color);
+    }
+    .btn1:hover {
+        border-color: var(--light-blue);
+        color: var(--light-blue);
+        font-weight: 600;
+    }
+}
+
+.labelform {
+    display: flex;
+    align-items: flex-start;
+    color: var(--dark-blue);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.btn {
+    color: var(--white-color);
+    font-size: 14px;
+    letter-spacing: 0.5rem;
+    text-decoration: none;
+    padding: 8px 10px;
+    border: 1px solid var(--light-blue);
+    float: left;
+    border-radius: 4px;
+    background-color: var(--dark-blue);
+    text-transform: uppercase;
+    float: right;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 1rem;
+    border-radius: 2em 0;
+    transition: 0.3s all;
+
+    &:hover {
+        border-color: var(--light-blue);
+        background: var(--light-blue);
+        color: var(--dark-blue);
+    }
+    &:active {
+        transform: scale(0.89);
+        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    }
+}
+
+.form-control {
+    font-size: 9px;
+}
+
+.img-zone {
+    width: 4px;
+    height: 2px;
+}
+
+.accordion-body {
+    height: auto;
+    margin-bottom: 8px;
+}
