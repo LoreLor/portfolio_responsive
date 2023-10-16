@@ -1,0 +1,92 @@
+.accordion {
+    display: block;
+    width: 100%;
+
+    &-item{
+        background-color:#f5ece4 ;
+    }
+    &-header{
+        background-color:#f5ece4 ;
+    }
+
+
+    .accordion-button {
+        background-color: #f78324;
+        color: #021f20;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    
+    .attributes {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .table {
+        font-size: 14px;
+        overflow-y: scroll;
+    }
+    
+    
+    
+    .btn1{
+        border-color: #f78324;
+    }
+    .btn1:hover{
+        background: linear-gradient(90deg, #f78324, #f5ece4);
+        border: linear-gradient(90deg, #f78324, #f5ece4);    
+        color:#0f0353;
+        font-weight: 600;
+    }
+}
+
+.labelform {
+    display: flex;
+    align-items: flex-start;
+    color: rgb(5, 4, 70);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.btn{
+    color: #f78324;
+    font-size: 14px;
+    letter-spacing: 0.5rem;
+    text-decoration: none;
+    padding: 8px 10px;
+    border: 1px solid #f78324;
+    float: left;
+    border-radius: 4px;
+    background: 0 0;
+    text-transform: uppercase;
+    float: right;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 8px;
+    border-radius: 2em 0;
+    transition: 0.3s all;
+
+    &:hover {
+        background:#0fb8ec;
+            color:darkblue;
+        }
+    &:active{
+        transform: scale(0.89);
+        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    }
+}
+
+.form-control{
+    font-size: 9px;
+}
+
+.img-zone{
+    width: 4px;
+    height: 2px;
+}
+
+.accordion-body{
+    height: auto;
+    margin-bottom: 8px;
+}

@@ -20,6 +20,7 @@ import "aos/dist/aos.css";
 import "./index.css";
 import { Route, Routes } from "react-router";
 import Login from "./components/login/Login";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
     const dispatch = useDispatch();
@@ -41,6 +42,7 @@ function App() {
             <div className="separator"></div>
             <Routes>
                 <Route path="/login" element={<Login />} />
+                <Route path="/login/dashboard" element={<Dashboard />} />
                 {/* <Route path="/login/dashboard" element={<Dashboard />} /> */}
                 <Route
                     path="/"
