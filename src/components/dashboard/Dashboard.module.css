@@ -1,0 +1,16 @@
+:root {
+    --dark-blue: #040F16;
+    --middle-blue: #0a82a7;
+    --light-blue: #299EFF;
+    --light-blue-transparent: #0fe5ec31;
+    --orange-color:#f78324; 
+    --light-orange: #f0c6a4;
+    --white-color: #d2d4d6;
+    --transition: all 0.3s ease-out;
+}
+
+.dashboard_page {
+    position: relative;
+    min-height: 100vh;
+
+}

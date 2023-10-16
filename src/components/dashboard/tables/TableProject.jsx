@@ -66,7 +66,7 @@ const TableProject = () => {
                                                     >
                                                       <svg
                                                         xmlns="http://www.w3.org/2000/svg"
-                                                        width="16"
+                                                        width="12"
                                                         height="16"
                                                         fill="currentColor"
                                                         className="bi bi-trash"
@@ -80,7 +80,7 @@ const TableProject = () => {
                                                     <button className="btn btn-light">
                                                       <svg
                                                         xmlns="http://www.w3.org/2000/svg"
-                                                        width="16"
+                                                        width="12"
                                                         height="16"
                                                         fill="currentColor"
                                                         className="bi bi-pencil-square"
@@ -135,6 +135,49 @@ const TableProject = () => {
                         className="form-control" 
                         required
                       />
+                      <label htmlFor="description" className="labelForm">Description:</label>
+                      <input 
+                        type="text" 
+                        name="description"
+                        id="description"
+                        className="form-control"
+                        required
+                      />
+                      <label htmlFor="stack" className="labelForm">Stack:</label>
+                      <input 
+                        type="text" 
+                        className="form-control" 
+                        name="stack"
+                        id="stack"
+                        required
+                      />
+                      <label htmlFor="deploy" className="labelForm">Deploy:</label>
+                      <input 
+                        type="text"
+                        name="deploy"
+                        id="deploy"
+                        className="form-control"
+                        required 
+                      />
+                      <label htmlFor="demo">Demo:</label>
+                      <input 
+                        type="text" 
+                        name="demo"
+                        id="demo"
+                        className="form-control"
+                        required
+                      />
+                      <label htmlFor="image" className="labelForm">Image:</label>
+                      <input 
+                        type="text" 
+                        name="image" 
+                        id="image"
+                        className="form-control"
+                        required
+                      />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                      <button type="submit" className="btn btn-ligth">SAVE</button>
                     </div>
                   </form>
                 </div>
