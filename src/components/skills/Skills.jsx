@@ -1,14 +1,11 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import VanillaTilt from "vanilla-tilt";
 import CardSkill from "./cardSkill/CardSkill";
-//import { useDispatch, useSelector } from "react-redux";
-//import { getSkills } from "../../redux/actions/skill";
-
-import image from "../../assets/images/react-trnsparente.png";
-import s from "./Skills.module.css";
-import { useDispatch, useSelector } from "react-redux";
 import { allSkills } from "../../store/actions/skills";
+import s from "./Skills.module.css";
+
 
 
 
@@ -18,6 +15,7 @@ const Skills = () => {
     
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
+
 
     // Efecto animatedLetter de los titulos
     useEffect(() => {
@@ -51,7 +49,7 @@ const Skills = () => {
         const wrapper = document.querySelectorAll(".wrapper");
         
         if (wrapper) {
-            wrapper.forEach((wrapp) => {
+            Array.from(wrapper).forEach((wrapp) => {
                 VanillaTilt.init(wrapp, {
                     max: 25,
                     speed: 400,
@@ -62,13 +60,13 @@ const Skills = () => {
 
             return () => {
                 Array.from(wrapper).forEach((wrapp) => {
-                    if (wrapp.vanillaTilt) {
-                        wrapp.vanillaTilt.destroy();
+                    if (wrapp.VanillaTilt) {
+                        wrapp.VanillaTilt.destroy();
                     }
                 });
             };
         }
-    }, []);
+    }, [skills]);
 
     
 
@@ -101,7 +99,7 @@ const Skills = () => {
                 <div className={`container ${s.skill_container}`}>
                     <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4  g-4 align-content-center justify-content-center align-items-center mt-2">
                         {
-                            skills && skills.map((s, index) => (
+                            skills && skills.map((s) => (
                                 <div className="col" key={s.name}>
                                     <CardSkill
                                         name={s.name}
