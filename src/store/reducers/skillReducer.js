@@ -1,4 +1,4 @@
-import { GET_SKILLS } from "../actions/skills/actionsTypes";
+import { DELETE_SKILL, GET_SKILLS, POST_SKILL } from "../actions/skills/actionsTypes";
 
 const initialState = {
     skills: [],
@@ -11,6 +11,18 @@ export function skillReducer (state = initialState, action) {
             return {
                 ...state,
                 skills: action.payload
+            }
+
+        case POST_SKILL:
+            return {
+                ...state,
+            }
+        
+        case DELETE_SKILL: 
+            return {
+                ...state,
+                detailSkill: action.payload,
+                skills: skills.filter(s => s.id !== action.payload)
             }
 
         default:
