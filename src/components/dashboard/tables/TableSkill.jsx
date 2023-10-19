@@ -9,9 +9,9 @@ const TableSkill = () => {
 
 
   return (
-    <div className='accordion' id='accordionSkill'>
+    <div className='accordion mt-4' id='accordionSkill'>
         {/* Show Skill */}
-        <div className="accordion-item">
+        <div className="accordion-item mb-2">
             <h2 className="accordion-header" id='headingOne'>
                 <button className="accordion-button"
                     type='button'
@@ -75,10 +75,47 @@ const TableSkill = () => {
         {/* Add Skill */}
         <div className="accordion-item">
             <h2 className="accordion-header" id='headingTwo'>
-                <button className="accordion-button">
-                    
+                <button className="accordion-button"
+                    type='button'
+                    data-bs-toggle='collapse'
+                    data-bs-target='#addSkill'
+                    aria-expanded='false'
+                    aria-controls='collapseTwo'
+                >
+                    ADD SKILL
                 </button>
             </h2>
+            <div id="addSkill"
+                className='accordion-collapse collapse'
+                aria-labelledby='headingTwo'
+                data-bs-parent='#accordionSkill'
+            >
+                <div className="accordion-body">
+                    <form>
+                        <div className="form-group">
+                            <label htmlFor="name" className="labelForm">Skill Name</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                className='form-control'
+                                required
+                            />
+
+                            <label htmlFor="image" className="labelForm">Skill Image</label>
+                            <input 
+                                type="url" 
+                                name="image" 
+                                id="image" 
+                                className='form-control'
+                            />
+                        </div>
+                    </form>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <button type="submit" className="btn btn-ligth">SAVE</button>
+                </div>
+            </div>
         </div>
       
     </div>
