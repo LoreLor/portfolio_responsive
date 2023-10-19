@@ -39,7 +39,6 @@ function App() {
     return (
         <>
             <ToastContainer />
-            <div className="separator"></div>
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/login/dashboard" element={<Dashboard />} />
@@ -51,6 +50,7 @@ function App() {
                         <>
                             {/* El contenido principal de tu aplicación */}
                             <Navbar />
+                            <div className="separator"></div>
                             <Home />
                             <div className="separator"></div>
                             <About />

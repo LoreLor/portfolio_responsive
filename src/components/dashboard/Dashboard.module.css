@@ -12,5 +12,34 @@
 .dashboard_page {
     position: relative;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.dashboard_page::before {
+    content: '<section id="dashboard">';
+    font-family: 'La Belle Aurore';
+    color: var(--orange-color);
+    font-size:1.2rem;
+    position: absolute;
+    opacity: 0.6;
+    left: 2rem;
+    top: 1rem;
+    animation: fadeIn 2s 1.7s backwards;
+    transition: var(--transition);
+}
+
+.dashboard_page::after {
+    content: '</section>';
+    font-family: 'La Belle Aurore';
+    color: #f78324;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0rem;
+    left: 2rem;
+    animation: fadeIn 2s 1.7s backwards;
+    opacity: 0.6;
+    transition: var(--transition);
 }

@@ -61,7 +61,12 @@
     align-items: flex-start;
     color: var(--dark-blue);
     font-weight: 600;
-    font-size: 12px;
+    font-size: 0.8rem;
+}
+
+.form-group input{
+    height: 2rem !important;
+    font-size: 1rem;
 }
 
 .btn {

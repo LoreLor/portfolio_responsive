@@ -2,10 +2,22 @@ import React from 'react';
 import './Projects.scss';
 import { useSelector } from 'react-redux';
 import { Fragment } from 'react';
+import { useState } from 'react';
 
 const TableSkill = () => {
     const skills = useSelector(state => state.skills.skills);
-    console.log('skills :>> ', skills);
+    //console.log('skills :>> ', skills);
+    const [input, setInput] = useState({
+        name: '',
+        image: '',
+    });
+    
+    const handleChange = (e) => {
+        setInput({
+            ...state,
+            [e.target.name]: e.target.value
+        })
+    }
 
 
   return (
@@ -100,6 +112,7 @@ const TableSkill = () => {
                                 id="name" 
                                 className='form-control'
                                 required
+                                onChange={handleChange}
                             />
 
                             <label htmlFor="image" className="labelForm">Skill Image</label>
@@ -108,6 +121,7 @@ const TableSkill = () => {
                                 name="image" 
                                 id="image" 
                                 className='form-control'
+                                onChange={handleChange}
                             />
                         </div>
                     </form>
