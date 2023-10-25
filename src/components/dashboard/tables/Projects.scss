@@ -75,10 +75,10 @@
     letter-spacing: 0.5rem;
     text-decoration: none;
     padding: 8px 10px;
-    border: 1px solid var(--light-blue);
+    border: 1px solid var(--orange-color);
     float: left;
     border-radius: 4px;
-    background-color: var(--dark-blue);
+    background-color: var(--orange-color);
     text-transform: uppercase;
     float: right;
     text-align: center;
@@ -102,9 +102,9 @@
     font-size: 9px;
 }
 
-.img-zone {
-    width: 4px;
-    height: 2px;
+.img-zone img{
+    width: 5rem;
+    height:5rem;
 }
 
 .accordion-body {
