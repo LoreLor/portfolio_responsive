@@ -31,20 +31,23 @@
 
     .attributes {
         max-width: 100%;
-        overflow: auto;
+        overflow:auto;
+    
 
         table {
             width: 75%;
             margin: 0 auto;
             max-width: 100%;
             font-size: 14px;
+
+            td, th{
+               font-size: 0.7rem;
+               text-wrap: wrap;
+           }
         }
 
-        table td, table th{
-            font-size: 0.7rem;
-            text-wrap: wrap;
-        }
-    }
+    
+
 
     .btn1 {
         border-color: var(--orange-color);
@@ -97,6 +100,7 @@
         box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     }
 }
+}
 
 .form-control {
     font-size: 9px;
@@ -104,7 +108,7 @@
 
 .img-zone img{
     width: 5rem;
-    height:5rem;
+    height: 5rem;
 }
 
 .accordion-body {

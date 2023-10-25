@@ -88,7 +88,7 @@ const TableProject = () => {
                 >
                   <div className="accordion-body">
                       <div className="attributes">
-                          <table className="table table-group-divider">
+                          <table className="table table-group-divider table responsive">
                               <thead>
                                   <tr>
                                       <th scope="col">ID</th>
@@ -118,9 +118,7 @@ const TableProject = () => {
                                                   <td>{p.github}</td>
                                                   <td>{p.demo}</td>
                                                   <td>
-                                                    <button className="btn btn-light"
-                                                      
-                                                    >
+                                                    <button className="btn btn-light">
                                                       <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="12"
