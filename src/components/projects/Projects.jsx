@@ -78,7 +78,7 @@ const Projects = () => {
                                     <CardProject
                                         name={p.name} 
                                         image={p.image}
-                                        description={p.descriprion} 
+                                        description={p.description} 
                                         stack={p.stack}
                                         deploy={p.deploy}
                                         demo={p.demo}

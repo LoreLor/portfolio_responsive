@@ -1,10 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import { Fragment } from "react";
-import "./Projects.scss";
 import { useSelector } from "react-redux";
+import { addProject, allProjects } from "../../../store/actions/projects";
+import { toast } from "react-toastify";
+import SERVER from "../../../server/index"
+import axios from "axios";
+import "./Projects.scss";
 
 const TableProject = () => {
-  const projects = useSelector(state => state.projects.projects);
+      const projects = useSelector(state => state.projects.projects);
+   
+      const [inputs, setInputs] = useState({
+          name:'',
+          description:'',
+          stack:'',
+          deploy:'',
+          github:'',
+          demo:'',
+          image:''
+      });
+
+      const handleChange = (e) => {
+        setInputs({
+          ...inputs,
+          [e.target.name]: e.target.value
+        })
+      };
+
+      const handleSubmit = async(e) => {
+        e.preventDefault();
+        if(Object.keys(inputs).length === 7 && inputs.values !== ''){
+          let response = null
+          try {
+              response = await axios.post(`${SERVER}/project`, inputs)       
+              if(response.data.message === 'Project Created'){
+                setInputs({
+                    name:'',
+                    description:'',
+                    stack:'',
+                    deploy:'',
+                    github:'',
+                    demo:'',
+                    image:''
+                });
+                toast.success(`${response.data.message}`, {
+                  position:toast.POSITION.TOP_CENTER,
+                  autoClose: 1500,
+                  theme:'colored',
+                });
+                setTimeout(() => {
+                  dispatch(allProjects())
+                }, 1500)
+              }
+          } catch (error) {
+              toast.error(console.log(error), {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: 1500,
+                theme: 'colored'
+              }
+            )
+          }
+        }
+      }
 
 
     return (
@@ -31,7 +88,7 @@ const TableProject = () => {
                 >
                   <div className="accordion-body">
                       <div className="attributes">
-                          <table className="table table-group-divider">
+                          <table className="table table-group-divider table responsive">
                               <thead>
                                   <tr>
                                       <th scope="col">ID</th>
@@ -49,7 +106,7 @@ const TableProject = () => {
                                           <Fragment key={p.id}>
                                               <tr>
                                                   <th scope="row">{p.id}</th>
-                                                  <td>
+                                                  <td className="img-zone">
                                                       <img
                                                           src={p.image}
                                                           alt={p.name}
@@ -61,9 +118,7 @@ const TableProject = () => {
                                                   <td>{p.github}</td>
                                                   <td>{p.demo}</td>
                                                   <td>
-                                                    <button className="btn btn-light"
-                                                      
-                                                    >
+                                                    <button className="btn btn-light">
                                                       <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="12"
@@ -125,7 +180,7 @@ const TableProject = () => {
                 data-bs-parent='#accordionProject'
               >
                 <div className="accordion-body">
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div className="form-group">
                       <label htmlFor="name" className="labelForm">Project Name:</label>
                       <input 
@@ -134,6 +189,7 @@ const TableProject = () => {
                         id="name"
                         className="form-control" 
                         required
+                        onChange={handleChange}
                       />
                       <label htmlFor="description" className="labelForm">Description:</label>
                       <input 
@@ -142,6 +198,7 @@ const TableProject = () => {
                         id="description"
                         className="form-control"
                         required
+                        onChange={handleChange}
                       />
                       <label htmlFor="stack" className="labelForm">Stack:</label>
                       <input 
@@ -150,6 +207,7 @@ const TableProject = () => {
                         name="stack"
                         id="stack"
                         required
+                        onChange={handleChange}
                       />
                       <label htmlFor="deploy" className="labelForm">Deploy:</label>
                       <input 
@@ -158,6 +216,7 @@ const TableProject = () => {
                         id="deploy"
                         className="form-control"
                         required 
+                        onChange={handleChange}
                       />
                       <label htmlFor="demo">Demo:</label>
                       <input 
@@ -166,6 +225,7 @@ const TableProject = () => {
                         id="demo"
                         className="form-control"
                         required
+                        onChange={handleChange} 
                       />
                       <label htmlFor="image" className="labelForm">Image:</label>
                       <input 
@@ -174,6 +234,7 @@ const TableProject = () => {
                         id="image"
                         className="form-control"
                         required
+                        onChange={handleChange}
                       />
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

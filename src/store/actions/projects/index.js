@@ -33,7 +33,6 @@ export const addProject = (project) => async(dispatch) => {
         const data = await axios.post(`${URL_API_URL}/project`, project);
         dispatch({
             type: POST_PROJECT,
-            payload: data
         })
     } catch (error) {
         console.log(error);
