@@ -1,3 +1,3 @@
-const URL_API="https://portfolio-api-jp7h.onrender.com";
+const URL_API="https://34.125.114.87";
 
 export default URL_API
