@@ -47,6 +47,7 @@ const Projects = () => {
     return (
         <>
             <div className={`container ${s.projects_page}`} id="projects">
+                {/* Animacion del Titulo */}
                 <div className={s.projects_text}>
                     <h2>
                     {
@@ -70,7 +71,7 @@ const Projects = () => {
                         />) : (null)
                     }
                     </h2>
-                    
+                    {/* Cards de Proyectos */}
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">
                         { projects && projects.map((p, index) => {
                             return (
