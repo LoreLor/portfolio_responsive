@@ -20,7 +20,6 @@ export const addSkill = (skill) => async(dispatch) => {
         const data = await axios.post(`${URL_API}/skill`, skill)
         dispatch({
             type: POST_SKILL,
-            payload: data.data
         })
     } catch (error) {
         console.log(error);
@@ -32,7 +31,7 @@ export const deleteSkill = (id) => async(dispatch) => {
         const { data} = await axios.delete(`${URL_API}/skill/${id}`)
         dispatch({
             type: DELETE_SKILL,
-            payload: data.data
+            payload: data
         })
     } catch (error) {
         console.log(error);

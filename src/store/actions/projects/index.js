@@ -5,7 +5,7 @@ import URL_API from '../../../server';
 
 export const allProjects = () => async(dispatch) => {
     try{
-        const { data } = await axios.get(`${URL_API}/project`);
+        const {data} = await axios.get(`${URL_API}/project`);
         dispatch({
             type: GET_PROJECTS,
             payload: data.data
@@ -21,7 +21,7 @@ export const projectById = (id) => async(dispatch) => {
         console.log('dataId :>> ', data);
         dispatch({
             type: GET_PROJECTS_BY_ID,
-            payloas: data.data
+            payload: data.data
         })
     } catch (error) {
         console.log(error);
@@ -30,7 +30,7 @@ export const projectById = (id) => async(dispatch) => {
 
 export const addProject = (project) => async(dispatch) => {
     try {
-        const data = await axios.post(`${URL_API_URL}/project`, project);
+        const {data }= await axios.post(`${URL_API_URL}/project`, project);
         dispatch({
             type: POST_PROJECT,
         })
