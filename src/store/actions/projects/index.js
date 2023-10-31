@@ -41,7 +41,7 @@ export const addProject = (project) => async(dispatch) => {
 
 export const updateProject = (id, project) => async(dispatch) => {
     try {
-        const {data} = await axios.put(`${URL_API}/projects/${id}`, project);
+        const {data} = await axios.put(`${URL_API}/project/${id}`, project);
         dispatch({
             type: PUT_PROJECT,
             payload: data
@@ -53,7 +53,7 @@ export const updateProject = (id, project) => async(dispatch) => {
 
 export const deleteProject = (id) => async(dispatch) => {
     try {
-        const {data} = await axios.delete(`${URL_API}/projects/${id}`);
+        const {data} = await axios.delete(`${URL_API}/project/${id}`);
         dispatch({
             type: DELETE_PROJECT,
             payload: data
