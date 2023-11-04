@@ -2,4 +2,4 @@
 # See: https://www.netlify.com/docs/redirects/
 
 /*    /index.html   200
-/* http://34.168.113.109:8000/:splat 200
+/34.168.113.109/* http://34.168.113.109:8000/:splat 200!
