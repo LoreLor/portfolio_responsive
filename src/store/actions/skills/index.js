@@ -8,7 +8,7 @@ export const allSkills = () => async(dispatch) => {
         const {data} = await axios.get(`${URL_API}/skill`)
         dispatch({
             type: GET_SKILLS,
-            payload: data.data
+            payload: data
         })
     } catch (error) {
         console.log(error);

@@ -7,7 +7,7 @@ const CardSkill = ({ name, image }) => {
             <div className={s.card_content}>
                 <figure>
                     <img src={image} alt={name} />
-                    <figcaption>{name}</figcaption>
+                    <figcaption><p>{name}</p></figcaption>
                 </figure>
                 <div className={s.bg}></div>
             </div>
