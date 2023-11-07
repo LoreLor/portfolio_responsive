@@ -27,7 +27,7 @@ export function projectReducer(state=initalState, action) {
         case PUT_PROJECT:
             return {
                 ...state,
-                detailProject: action.payload
+                detailProject: action.payload,
             };
 
         case DELETE_PROJECT:

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
-import { useSelector } from "react-redux";
-import { allProjects } from "../../../store/actions/projects";
+import { useDispatch, useSelector } from "react-redux";
+import { allProjects, projectById } from "../../../store/actions/projects";
 import FormProjectUpdate from "./FormProjectUpdate";
 import { toast } from "react-toastify";
 import SERVER from "../../../server/index"
@@ -12,7 +12,10 @@ import "./Projects.scss";
 
 
 const TableProject = () => {
+  const dispatch = useDispatch();
       const projects = useSelector(state => state.projects.projects);
+      const [selectedProject, setSelectedproject] = useState(null);
+
       const [showModal, setShowModal] = useState(false);
 
       const [inputs, setInputs] = useState({
@@ -24,6 +27,10 @@ const TableProject = () => {
           demo:'',
           image:''
       });
+
+      useEffect(() => {
+        dispatch(allProjects())
+      },[]);
 
       // Post New Project
       const handleChange = (e) => {
@@ -71,7 +78,8 @@ const TableProject = () => {
 
       // Update Project
       const handleUpdateProject = (id) => {
-        projects.filter(p => p.id === id);
+        console.log('id :>> ', id);
+        setSelectedproject(id);
         setShowModal(true);
       }
 
@@ -182,6 +190,7 @@ const TableProject = () => {
                                                     <FormProjectUpdate 
                                                         showModal={showModal}
                                                         handleCloseModal={handleCloseModal}
+                                                        id={selectedProject}
                                                       />
                                                   </td>
                                               </tr>
