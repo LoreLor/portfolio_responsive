@@ -27,7 +27,7 @@ export function skillReducer (state = initialState, action) {
         case DELETE_SKILL: 
             return {
                 ...state,
-                skills: state.skills.filter(s => s.id !== action.payload)
+                skills: state.skills.filter(s => s.id !== action.payload.id)
             }
 
         default:
