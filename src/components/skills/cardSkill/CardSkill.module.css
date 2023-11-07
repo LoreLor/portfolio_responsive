@@ -14,8 +14,8 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 6rem;
-    height: 6rem;
+    width: 6.5rem;
+    height: 6.5rem;
     border-radius: 6px;
     border-bottom: 1px solid #ec8c0f;
     border-left: 1px solid #0fe5ec;
@@ -24,7 +24,7 @@
     transform-style: preserve-3d;
     transition: var(--transition);
     position: relative;
-    margin:0 auto;
+    margin:1rem auto;
     background-color: #33343521;
 }
 
@@ -43,6 +43,7 @@
 
 .card_content img {
     width: 60%;
+    color: var(--light-blue-transparent);
     border-radius: 5px;
     box-shadow: 10px 10px 8px  rgba(1, 22, 22, 0.829);
     border-bottom: 1px solid var(--orange-color);

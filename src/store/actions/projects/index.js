@@ -8,7 +8,7 @@ export const allProjects = () => async(dispatch) => {
         const {data} = await axios.get(`${URL_API}/project`);
         dispatch({
             type: GET_PROJECTS,
-            payload: data.data
+            payload: data
         })
     } catch(error){
         console.log(error)
@@ -21,7 +21,7 @@ export const projectById = (id) => async(dispatch) => {
         console.log('dataId :>> ', data);
         dispatch({
             type: GET_PROJECTS_BY_ID,
-            payload: data.data
+            payload: data
         })
     } catch (error) {
         console.log(error);
@@ -44,7 +44,7 @@ export const updateProject = (id, project) => async(dispatch) => {
         const {data} = await axios.put(`${URL_API}/project/${id}`, project);
         dispatch({
             type: PUT_PROJECT,
-            payload: data.data
+            payload: data
         })
     } catch (error) {
         console.log(error);
@@ -56,7 +56,7 @@ export const deleteProject = (id) => async(dispatch) => {
         const {data} = await axios.delete(`${URL_API}/project/${id}`);
         dispatch({
             type: DELETE_PROJECT,
-            payload: data.data
+            payload: data
         })
     } catch (error) {
         console.log(error);
