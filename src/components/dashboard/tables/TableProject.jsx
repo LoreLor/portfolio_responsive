@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { allProjects, projectById } from "../../../store/actions/projects";
+import { allProjects, deleteProject, projectById } from "../../../store/actions/projects";
 import FormProjectUpdate from "./FormProjectUpdate";
 import { toast } from "react-toastify";
 import SERVER from "../../../server/index"
@@ -84,9 +84,16 @@ const TableProject = () => {
       }
 
       // Delete Project
-      const handleDeleteProject = () => {
+      const handleDeleteProject = (id) => {
         console.log('deleteProject')
-      }
+        dispatch(deleteProject(id))
+        toast.success(<p>Project Deleted successful</p>, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose:2000,
+          theme:'colored'
+        })
+        dispatch(allProjects())
+      };
       
       // Handle Modal
       const handleCloseModal = () => {
@@ -150,7 +157,7 @@ const TableProject = () => {
                                                     {/* Button Remove */}
                                                     <button className="btn btn-light"
                                                         type="button"
-                                                        onClick={handleDeleteProject}
+                                                        onClick={() => handleDeleteProject(p.id)}
                                                     >
                                                       <svg
                                                         xmlns="http://www.w3.org/2000/svg"
