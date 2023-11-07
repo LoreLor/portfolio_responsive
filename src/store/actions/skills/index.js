@@ -1,6 +1,6 @@
 import URL_API from '../../../server';
 import axios from 'axios';
-import { DELETE_SKILL, GET_SKILLS } from './actionsTypes';
+import { DELETE_SKILL, GET_SKILLS, PUT_SKILL, POST_SKILL } from './actionsTypes';
 
 
 export const allSkills = () => async(dispatch) => {
@@ -19,13 +19,24 @@ export const addSkill = (skill) => async(dispatch) => {
     try {
         const data = await axios.post(`${URL_API}/skills`, skill)
         dispatch({
-            type: POST_SKILL,
-            payload: data
+            type: POST_SKILL
         })
     } catch (error) {
         console.log(error);
     }
 };
+
+export const updateSkill = (id, body) => async(dispatch) => {
+    try {
+        const data = await axios.put(`${URL_API}/skill/${id}`, body);
+        dispatch({
+            type: PUT_SKILL,
+            payload: data
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 export const deleteSkill = (id) => async(dispatch) => {
     try {
