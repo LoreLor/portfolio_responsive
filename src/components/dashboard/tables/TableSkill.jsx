@@ -1,14 +1,20 @@
+import axios from "axios";
 import React, { useState, Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { allSkills, deleteSkill } from "../../../store/actions/skills";
-import "./Projects.scss";
 import FormUpdateSkill from "./FormUpdateSkill";
+import SERVER from '../../../server/index'
 import { toast } from "react-toastify";
+import "./Projects.scss";
+
+
 
 const TableSkill = () => {
     const dispatch = useDispatch();
     const skills = useSelector((state) => state.skills.skills);
+    
     const [showModal, setShowModal] = useState(false);
+    const [deleteSkills, setDeleteSkill] = useState(null);
 
     const [input, setInput] = useState({
         name: "",
@@ -19,13 +25,44 @@ const TableSkill = () => {
         dispatch(allSkills());
     }, []);
 
+    // escucho el cambio
     const handleChange = (e) => {
         setInput({
-            ...state,
+            ...input,
             [e.target.name]: e.target.value,
         });
     };
 
+    // Agrego un Skill
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        if(Object.keys(input).length === 2 && input.values !== ''){
+            let response = null;
+            try {
+                response = await axios.post(`${SERVER}/skill`, input)
+                if(response.data.message === 'Skill Created'){
+                    setInput({
+                        name:'',
+                        image:'',
+                    });
+                    dispatch(allSkills());
+                    toast.success(`${response.data.message}`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        autoClose: 1500,
+                        theme: 'colored'
+                    });
+                }
+            }catch (error) {
+                toast.error(console.log(error), {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 1500,
+                    theme: 'colored'
+                })
+            }
+        }
+    }
+
+    // encuentro el skill por id
     const handleUpdateSkill = (id) => {
         skills.filter(skill => skill.id === id)
         setShowModal(true);
@@ -35,15 +72,33 @@ const TableSkill = () => {
         setShowModal(false);
     };   
 
-    const handleDeleteSkill = (id) => {
-        dispatch(deleteSkill(id));
-        toast.success(<span>Skill Deleted SuccessFul</span>, {
-            position: toast.POSITION.TOP_CENTER,
-            autoClose: 2000,
-            theme:'colored',
-        });
-        dispatch(allSkills());
-    };
+    // elimino el skill
+    const handleDeleteSkill = async (id) => {
+        try {
+            await dispatch(deleteSkill(id)); // Elimina la skill
+            dispatch(allSkills()); // Actualiza los datos de inmediato
+            setDeleteSkill(id);
+            toast.success(<span>Skill Deleted Successfully</span>, {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: 2000,
+                theme: 'colored',
+            });
+        } catch (error) {
+            toast.error(console.log(error), {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: 1500,
+                theme: 'colored'
+            })
+        }
+        }
+    
+    useEffect(() =>{
+        if(deleteSkills){
+            dispatch(allSkills());
+            setDeleteSkill(null);
+        }
+    }, [])
+
 
     return (
         <div className="accordion mt-4" id="accordionSkill">
@@ -199,7 +254,11 @@ const TableSkill = () => {
                     <div
                         style={{ display: "flex", justifyContent: "flex-end" }}
                     >
-                        <button type="submit" className="btn btn-ligth">
+                        <button 
+                            type="submit" 
+                            className="btn btn-ligth"
+                            onClick={handleSubmit}
+                        >
                             SAVE
                         </button>
                     </div>
