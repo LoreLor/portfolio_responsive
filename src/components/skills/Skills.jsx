@@ -53,6 +53,8 @@ const Skills = () => {
                 VanillaTilt.init(wrapp, {
                     max: 25,
                     speed: 400,
+                    startX:-10,
+                    startY:-8,
                     glare: true,
                     "max-glare": 0.5,
                 });
@@ -97,7 +99,7 @@ const Skills = () => {
                     </h2>
                 </div>
                 <div className={`container ${s.skill_container}`}>
-                    <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4  g-4 align-content-center justify-content-center align-items-center mt-2">
+                    <div className="row row-cols-md-4 row-cols-lg-5 g-3 align-content-center justify-content-center align-items-center">
                         {
                             skills && skills.map((s) => (
                                 <div className="col" key={s.name}>
