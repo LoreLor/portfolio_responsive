@@ -17,7 +17,7 @@ export const allSkills = () => async(dispatch) => {
 
 export const addSkill = (skill) => async(dispatch) => {
     try {
-        const data = await axios.post(`${URL_API}/skills`, skill)
+        const data = await axios.post(`${URL_API}/skill`, skill)
         dispatch({
             type: POST_SKILL
         })

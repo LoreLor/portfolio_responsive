@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
-import { addProject, allProjects } from "../../../store/actions/projects";
+import { allProjects } from "../../../store/actions/projects";
+import FormProjectUpdate from "./FormProjectUpdate";
 import { toast } from "react-toastify";
 import SERVER from "../../../server/index"
 import axios from "axios";
 import "./Projects.scss";
 
+
+
+
 const TableProject = () => {
       const projects = useSelector(state => state.projects.projects);
-   
+      const [showModal, setShowModal] = useState(false);
+
       const [inputs, setInputs] = useState({
           name:'',
           description:'',
@@ -20,6 +25,7 @@ const TableProject = () => {
           image:''
       });
 
+      // Post New Project
       const handleChange = (e) => {
         setInputs({
           ...inputs,
@@ -63,6 +69,21 @@ const TableProject = () => {
         }
       }
 
+      // Update Project
+      const handleUpdateProject = (id) => {
+        projects.filter(p => p.id === id);
+        setShowModal(true);
+      }
+
+      // Delete Project
+      const handleDeleteProject = () => {
+        console.log('deleteProject')
+      }
+      
+      // Handle Modal
+      const handleCloseModal = () => {
+        setShowModal(false);
+      }
 
     return (
       <>
@@ -118,7 +139,11 @@ const TableProject = () => {
                                                   <td>{p.github}</td>
                                                   <td>{p.demo}</td>
                                                   <td>
-                                                    <button className="btn btn-light">
+                                                    {/* Button Remove */}
+                                                    <button className="btn btn-light"
+                                                        type="button"
+                                                        onClick={handleDeleteProject}
+                                                    >
                                                       <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="12"
@@ -132,7 +157,13 @@ const TableProject = () => {
                                                       </svg>
                                                     </button>
                                                     <br />
-                                                    <button className="btn btn-light">
+                                                    {/* Button Update */}
+                                                    <button className="btn btn-light" 
+                                                        data-bs-toggle="modal" 
+                                                        data-bs-target="#projectModal"
+                                                        onClick={()=>handleUpdateProject(p.id)}
+                                                        type="button"
+                                                    >
                                                       <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="12"
@@ -148,6 +179,10 @@ const TableProject = () => {
                                                           />
                                                       </svg>
                                                     </button>
+                                                    <FormProjectUpdate 
+                                                        showModal={showModal}
+                                                        handleCloseModal={handleCloseModal}
+                                                      />
                                                   </td>
                                               </tr>
                                           </Fragment>
