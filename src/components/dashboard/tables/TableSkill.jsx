@@ -1,13 +1,16 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { allSkills, deleteSkill } from "../../../store/actions/skills";
-import "./Projects.scss";
 import FormUpdateSkill from "./FormUpdateSkill";
 import { toast } from "react-toastify";
+import "./Projects.scss";
+
+
 
 const TableSkill = () => {
     const dispatch = useDispatch();
     const skills = useSelector((state) => state.skills.skills);
+    
     const [showModal, setShowModal] = useState(false);
 
     const [input, setInput] = useState({
@@ -19,6 +22,7 @@ const TableSkill = () => {
         dispatch(allSkills());
     }, []);
 
+    // escucho el cambio
     const handleChange = (e) => {
         setInput({
             ...state,
@@ -26,6 +30,37 @@ const TableSkill = () => {
         });
     };
 
+    // Agrego un Skill
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        if(Object.keys(input).length === 2 && input.values !== ''){
+            let response = null;
+            try {
+                if(response.data.message === 'Skill Created'){
+                    setInput({
+                        name:'',
+                        image:'',
+                    });
+                    toast.success(`${response.data.message}`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        autoClose: 1500,
+                        theme: 'colored'
+                    });
+                    setTimeout(() => {
+                        dispatch(allSkills())
+                    }, 1500)
+                }
+            }catch (error) {
+                toast.error(console.log(error), {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 1500,
+                    theme: 'colored'
+                })
+            }
+        }
+    }
+
+    // encuentro el skill por id
     const handleUpdateSkill = (id) => {
         skills.filter(skill => skill.id === id)
         setShowModal(true);
@@ -35,6 +70,7 @@ const TableSkill = () => {
         setShowModal(false);
     };   
 
+    // elimino el skill
     const handleDeleteSkill = (id) => {
         dispatch(deleteSkill(id));
         toast.success(<span>Skill Deleted SuccessFul</span>, {
@@ -45,6 +81,7 @@ const TableSkill = () => {
         dispatch(allSkills());
     };
 
+    
     return (
         <div className="accordion mt-4" id="accordionSkill">
             {/* Show Skill */}

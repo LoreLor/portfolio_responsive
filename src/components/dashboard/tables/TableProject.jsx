@@ -32,14 +32,15 @@ const TableProject = () => {
         dispatch(allProjects())
       },[]);
 
-      // Post New Project
+      // escucho el cambio
       const handleChange = (e) => {
         setInputs({
           ...inputs,
           [e.target.name]: e.target.value
         })
       };
-
+      
+      // Post New Project
       const handleSubmit = async(e) => {
         e.preventDefault();
         if(Object.keys(inputs).length === 7 && inputs.values !== ''){
@@ -76,9 +77,9 @@ const TableProject = () => {
         }
       }
 
-      // Update Project
+      // Find Project By Id
       const handleUpdateProject = (id) => {
-        console.log('id :>> ', id);
+        //console.log('id :>> ', id);
         setSelectedproject(id);
         setShowModal(true);
       }
