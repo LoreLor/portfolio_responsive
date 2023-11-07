@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
-import { allProjects } from "../../../store/actions/projects";
+import { allProjects, projectById } from "../../../store/actions/projects";
 import FormProjectUpdate from "./FormProjectUpdate";
 import { toast } from "react-toastify";
 import SERVER from "../../../server/index"
@@ -71,7 +71,8 @@ const TableProject = () => {
 
       // Update Project
       const handleUpdateProject = (id) => {
-        projects.filter(p => p.id === id);
+        console.log('id :>> ', id);
+        projectById(id);
         setShowModal(true);
       }
 
