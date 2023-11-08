@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { projectById, updateProject } from "../../../store/actions/projects";
 
 
@@ -66,7 +66,6 @@ const FormProjectUpdate = ({ id }) => {
     
     return (
         <>
-            <ToastContainer></ToastContainer>
             <div
                 className="modal fade"
                 id="projectModal"

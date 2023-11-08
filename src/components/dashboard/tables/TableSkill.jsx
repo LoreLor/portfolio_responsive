@@ -47,14 +47,14 @@ const TableSkill = () => {
                     });
                     dispatch(allSkills());
                     toast.success(`${response.data.message}`, {
-                        position: toast.POSITION.TOP_CENTER,
+                        position: toast.POSITION.BOTTOM_CENTER,
                         autoClose: 1500,
                         theme: 'colored'
                     });
                 }
             }catch (error) {
                 toast.error(console.log(error), {
-                    position: toast.POSITION.TOP_CENTER,
+                    position: toast.POSITION.BOTTOM_CENTER,
                     autoClose: 1500,
                     theme: 'colored'
                 })
@@ -88,14 +88,14 @@ const TableSkill = () => {
                 position: toast.POSITION.TOP_CENTER,
                 autoClose: 1500,
                 theme: 'colored'
-            })
+            });
         }
-        }
+    };
     
     useEffect(() =>{
         if(deleteSkills){
-            dispatch(allSkills());
             setDeleteSkill(null);
+            dispatch(allSkills());
         }
     }, [])
 
