@@ -64,6 +64,7 @@ const FormProjectUpdate = ({ id }) => {
         });
     };
 
+    
     return (
         <div
             className="modal fade"
@@ -74,7 +75,7 @@ const FormProjectUpdate = ({ id }) => {
         >
             <div className="modal-dialog">
                 <div className="modal-content">
-                    <div className="container">
+                    <div className="container form-page">
                         <div className="text-zone">
                             <div className="accordion-zone">
                                 <div
@@ -93,7 +94,6 @@ const FormProjectUpdate = ({ id }) => {
                                                 data-bs-target="#updateProject"
                                                 aria-expanded="false"
                                                 aria-controls="collapseOne"
-                                                
                                             >
                                                 PROJECTS - UPDATE
                                             </button>

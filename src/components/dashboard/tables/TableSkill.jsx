@@ -34,25 +34,29 @@ const TableSkill = () => {
     };
 
     // Agrego un Skill
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if(Object.keys(input).length === 2 && input.values !== ''){
+        if(Object.keys(input).length === 2 
+            && input.name !== ''
+            && input.image !== '') {
             let response = null;
             try {
                 response = await axios.post(`${SERVER}/skill`, input)
+                
                 if(response.data.message === 'Skill Created'){
-                    setInput({
-                        name:'',
-                        image:'',
-                    });
-                    dispatch(allSkills());
                     toast.success(`${response.data.message}`, {
                         position: toast.POSITION.BOTTOM_CENTER,
                         autoClose: 1500,
                         theme: 'colored'
                     });
+                    setInput({
+                        name: "",
+                        image: "",
+                    });
+                    dispatch(allSkills());
+                    setShowModal(false);
                 }
-            }catch (error) {
+            } catch (error) {
                 toast.error(console.log(error), {
                     position: toast.POSITION.BOTTOM_CENTER,
                     autoClose: 1500,
@@ -134,8 +138,7 @@ const TableSkill = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {skills &&
-                                        skills.map((s) => (
+                                    {skills && skills.map((s) => (
                                             <Fragment key={s.id}>
                                                 <tr>
                                                     <th scope="row">{s.id}</th>
@@ -235,6 +238,7 @@ const TableSkill = () => {
                                     id="name"
                                     className="form-control"
                                     required
+                                    value={input.name}
                                     onChange={handleChange}
                                 />
 
@@ -242,11 +246,13 @@ const TableSkill = () => {
                                     Skill Image
                                 </label>
                                 <input
+                                    className="form-control"
                                     type="url"
                                     name="image"
                                     id="image"
-                                    className="form-control"
+                                    value={input.image}
                                     onChange={handleChange}
+                                    required
                                 />
                             </div>
                         </form>

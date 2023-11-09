@@ -12,109 +12,109 @@ import "./Projects.scss";
 
 
 const TableProject = () => {
-  const dispatch = useDispatch();
-      const projects = useSelector(state => state.projects.projects);
-      const [selectedProject, setSelectedproject] = useState(null);
-      
-      const [delProject, setDelProject] = useState(null);
-      const [showModal, setShowModal] = useState(false);
+    const dispatch = useDispatch();
+    const projects = useSelector(state => state.projects.projects);
+    const [selectedProject, setSelectedproject] = useState(null);
+    
+    const [delProject, setDelProject] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
-      const [inputs, setInputs] = useState({
-          name: "",
-          description: "",
-          stack: "",
-          deploy: "",
-          github: "",
-          demo: "",
-          image: ""
-      });
+    const [inputs, setInputs] = useState({
+        name: "",
+        description: "",
+        stack: "",
+        deploy: "",
+        github: "",
+        demo: "",
+        image: ""
+    });
 
-      // escucho el cambio
-      const handleChange = (e) => {
-        setInputs({
-          ...inputs,
-          [e.target.name]:e.target.value
-        })
-      };
-      
-      // Post New Project
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-        if(Object.keys(inputs).length  && Object.values(inputs) !== "") {
-          let response = null;
-          try {
-              response = await axios.post(`${SERVER}/project`, inputs)       
-              
-              if(response.data.message === 'Project Created'){
-                toast.success(`${response.data.message}`, {
-                  position:toast.POSITION.BOTTOM_CENTER,
-                  autoClose: 1500,
-                  theme:'colored',
-                });
-                setInputs({
-                  name: "",
-                  description: "",
-                  stack: "",
-                  deploy: "",
-                  demo: "",
-                  image: "",
-                  github: "",
-                });
-                dispatch(allProjects());
-                setShowModal(false);
-              }
-          } catch (error) {
-              toast.error(console.log(error), {
-                position: toast.POSITION.BOTTOM_CENTER,
-                autoClose: 1500,
-                theme: 'colored'
-              }
-            )
-          }
-        }
-      }
-
-      // Find Project By Id
-      const handleUpdateProject = (id) => {
-        //console.log('id :>> ', id);
-        setSelectedproject(id);
-        setShowModal(true);
-      }
-
-      // Delete Project
-      const handleDeleteProject = async (id) => {
+    // escucho el cambio
+    const handleChange = (e) => {
+      setInputs({
+        ...inputs,
+        [e.target.name]:e.target.value
+      })
+    };
+    
+    // Post New Project
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      if(Object.keys(inputs).length  && Object.values(inputs) !== "") {
+        let response = null;
         try {
-            console.log('deleteProject')
-            await dispatch(deleteProject(id));
-            dispatch(allProjects())
-            setDelProject(id);
-            setShowModal(false);
-            toast.success(<p>Project Deleted successful</p>, {
-              position: toast.POSITION.TOP_CENTER,
-              autoClose:2000,
-              theme:'colored'
-            })
+            response = await axios.post(`${SERVER}/project`, inputs)       
             
+            if(response.data.message === 'Project Created'){
+              toast.success(`${response.data.message}`, {
+                position:toast.POSITION.BOTTOM_CENTER,
+                autoClose: 1500,
+                theme:'colored',
+              });
+              setInputs({
+                name: "",
+                description: "",
+                stack: "",
+                deploy: "",
+                demo: "",
+                image: "",
+                github: "",
+              });
+              dispatch(allProjects());
+              setShowModal(false);
+            }
         } catch (error) {
             toast.error(console.log(error), {
-              position: toast.POSITION.TOP_CENTER,
+              position: toast.POSITION.BOTTOM_CENTER,
               autoClose: 1500,
               theme: 'colored'
-          })
+            }
+          )
         }
-      };
-      
-      // Handle Modal
-      const handleCloseModal = () => {
-        setShowModal(false);
       }
+    }
 
-      useEffect(() => {
-        if(delProject){
+    // Find Project By Id
+    const handleUpdateProject = (id) => {
+      //console.log('id :>> ', id);
+      setSelectedproject(id);
+      setShowModal(true);
+    }
+
+    // Delete Project
+    const handleDeleteProject = async (id) => {
+      try {
+          console.log('deleteProject')
+          await dispatch(deleteProject(id));
+          dispatch(allProjects())
+          setDelProject(id);
+          setShowModal(false);
+          toast.success(<p>Project Deleted successful</p>, {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose:2000,
+            theme:'colored'
+          })
+          
+      } catch (error) {
+          toast.error(console.log(error), {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 1500,
+            theme: 'colored'
+        })
+      }
+    };
+    
+    // Handle Modal
+    const handleCloseModal = () => {
+      setShowModal(false);
+    }
+
+    useEffect(() => {
+      if(delProject){
           setDelProject(null);
           dispatch(allProjects());
-        }
-      }, []);
+      }
+    }, []);
 
 
 

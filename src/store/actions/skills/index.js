@@ -1,6 +1,6 @@
 import URL_API from '../../../server';
 import axios from 'axios';
-import { DELETE_SKILL, GET_SKILLS, PUT_SKILL, POST_SKILL } from './actionsTypes';
+import { DELETE_SKILL, GET_SKILLS, PUT_SKILL, POST_SKILL, GET_BY_ID } from './actionsTypes';
 
 
 export const allSkills = () => async(dispatch) => {
@@ -36,7 +36,19 @@ export const updateSkill = (id, body) => async(dispatch) => {
     } catch (error) {
         console.log(error);
     }
-}
+};
+
+export const skillById = (id) => async (dispatch) => {
+    try {
+        const { data } = await axios.get(`${URL_API}/skill/${id}`);
+        dispatch({
+            type: GET_BY_ID,
+            payload: data
+        })
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 export const deleteSkill = (id) => async(dispatch) => {
     try {
