@@ -4,7 +4,6 @@ import { ToastContainer } from "react-toastify";
 const FormUpdateSkill = () => {
   return (
         <>
-            <ToastContainer></ToastContainer>
             <div
                 className="modal fade"
                 id="skillModal"

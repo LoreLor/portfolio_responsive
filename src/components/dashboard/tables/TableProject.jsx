@@ -15,60 +15,57 @@ const TableProject = () => {
   const dispatch = useDispatch();
       const projects = useSelector(state => state.projects.projects);
       const [selectedProject, setSelectedproject] = useState(null);
-
+      
+      const [delProject, setDelProject] = useState(null);
       const [showModal, setShowModal] = useState(false);
 
       const [inputs, setInputs] = useState({
-          name:'',
-          description:'',
-          stack:'',
-          deploy:'',
-          github:'',
-          demo:'',
-          image:''
+          name: "",
+          description: "",
+          stack: "",
+          deploy: "",
+          github: "",
+          demo: "",
+          image: ""
       });
-
-      useEffect(() => {
-        dispatch(allProjects())
-      },[]);
 
       // escucho el cambio
       const handleChange = (e) => {
         setInputs({
           ...inputs,
-          [e.target.name]: e.target.value
+          [e.target.name]:e.target.value
         })
       };
       
       // Post New Project
-      const handleSubmit = async(e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        if(Object.keys(inputs).length === 7 && inputs.values !== ''){
-          let response = null
+        if(Object.keys(inputs).length  && Object.values(inputs) !== "") {
+          let response = null;
           try {
               response = await axios.post(`${SERVER}/project`, inputs)       
+              
               if(response.data.message === 'Project Created'){
-                setInputs({
-                    name:'',
-                    description:'',
-                    stack:'',
-                    deploy:'',
-                    github:'',
-                    demo:'',
-                    image:''
-                });
                 toast.success(`${response.data.message}`, {
-                  position:toast.POSITION.TOP_CENTER,
+                  position:toast.POSITION.BOTTOM_CENTER,
                   autoClose: 1500,
                   theme:'colored',
                 });
-                setTimeout(() => {
-                  dispatch(allProjects())
-                }, 1500)
+                setInputs({
+                  name: "",
+                  description: "",
+                  stack: "",
+                  deploy: "",
+                  demo: "",
+                  image: "",
+                  github: "",
+                });
+                dispatch(allProjects());
+                setShowModal(false);
               }
           } catch (error) {
               toast.error(console.log(error), {
-                position: toast.POSITION.TOP_CENTER,
+                position: toast.POSITION.BOTTOM_CENTER,
                 autoClose: 1500,
                 theme: 'colored'
               }
@@ -85,21 +82,41 @@ const TableProject = () => {
       }
 
       // Delete Project
-      const handleDeleteProject = (id) => {
-        console.log('deleteProject')
-        dispatch(deleteProject(id))
-        toast.success(<p>Project Deleted successful</p>, {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose:2000,
-          theme:'colored'
-        })
-        dispatch(allProjects())
+      const handleDeleteProject = async (id) => {
+        try {
+            console.log('deleteProject')
+            await dispatch(deleteProject(id));
+            dispatch(allProjects())
+            setDelProject(id);
+            setShowModal(false);
+            toast.success(<p>Project Deleted successful</p>, {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose:2000,
+              theme:'colored'
+            })
+            
+        } catch (error) {
+            toast.error(console.log(error), {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 1500,
+              theme: 'colored'
+          })
+        }
       };
       
       // Handle Modal
       const handleCloseModal = () => {
         setShowModal(false);
       }
+
+      useEffect(() => {
+        if(delProject){
+          setDelProject(null);
+          dispatch(allProjects());
+        }
+      }, []);
+
+
 
     return (
       <>
@@ -241,6 +258,7 @@ const TableProject = () => {
                         id="name"
                         className="form-control" 
                         required
+                        value={inputs.name}
                         onChange={handleChange}
                       />
                       <label htmlFor="description" className="labelForm">Description:</label>
@@ -250,6 +268,7 @@ const TableProject = () => {
                         id="description"
                         className="form-control"
                         required
+                        value={inputs.description}
                         onChange={handleChange}
                       />
                       <label htmlFor="stack" className="labelForm">Stack:</label>
@@ -259,6 +278,7 @@ const TableProject = () => {
                         name="stack"
                         id="stack"
                         required
+                        value={inputs.stack}
                         onChange={handleChange}
                       />
                       <label htmlFor="deploy" className="labelForm">Deploy:</label>
@@ -268,6 +288,7 @@ const TableProject = () => {
                         id="deploy"
                         className="form-control"
                         required 
+                        value={inputs.deploy}
                         onChange={handleChange}
                       />
                       <label htmlFor="demo">Demo:</label>
@@ -277,6 +298,17 @@ const TableProject = () => {
                         id="demo"
                         className="form-control"
                         required
+                        value={inputs.demo}
+                        onChange={handleChange} 
+                      />
+                      <label htmlFor="github">Github:</label>
+                      <input 
+                        type="text" 
+                        name="github"
+                        id="github"
+                        className="form-control"
+                        required
+                        value={inputs.github}
                         onChange={handleChange} 
                       />
                       <label htmlFor="image" className="labelForm">Image:</label>
@@ -286,6 +318,7 @@ const TableProject = () => {
                         id="image"
                         className="form-control"
                         required
+                        value={inputs.image}
                         onChange={handleChange}
                       />
                     </div>
