@@ -43,3 +43,31 @@
     opacity: 0.6;
     transition: var(--transition);
 }
+
+.flat_button {
+    float: right;
+    color: var(--orange-color);
+    font-size: 16px;
+    letter-spacing: 0.5rem;
+    text-decoration: none;
+    padding: 5px 20px;
+    border: 1px solid var(--orange-color);
+    border-radius: 2em 0;
+    background: 0 0;
+    text-transform: uppercase;
+    text-align: center;
+    margin-right: 1rem;
+    margin-top: 3rem;
+    transition: 0.3s all;
+    animation:fadeIn 10s;
+}
+
+.flat_button:hover{
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+}
+
+.flat_button:active {
+    transform: scale(0.89);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}

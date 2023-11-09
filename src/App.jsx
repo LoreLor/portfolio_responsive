@@ -42,11 +42,7 @@ function App() {
             <Routes>
                 <Route exact path="/login" element={<Login />} />
                 <Route path="/login/dashboard" element={<Dashboard />} />
-
-                {/* <Route path="/login/dashboard" element={<Dashboard />} /> */}
-                <Route
-                    path="/"
-                    element={
+                <Route path="/"  element={
                         <>
                             {/* El contenido principal de tu aplicación */}
                             <Navbar />
