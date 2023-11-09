@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 const FormUpdateSkill = ({ idSkill }) => {
     const dispatch = useDispatch();
     const detail = useSelector(state => state.skills.detailSkill);
+
     const [input, setInput] = useState({
         name: "",
         image: ""
@@ -17,12 +18,12 @@ const FormUpdateSkill = ({ idSkill }) => {
         if(idSkill){
             dispatch(skillById(idSkill));
         }
-    }, [dispatch, idSkill]);
+    }, [idSkill]);
 
     useEffect(() => {
         setInput({
-            name: input.name || "",
-            image: input.image || "",
+            name: detail.name || "",
+            image: detail.image || "",
         })
     }, [detail]);
 
@@ -34,6 +35,7 @@ const FormUpdateSkill = ({ idSkill }) => {
     };
 
     const handleSubmit = (e) => {
+        console.log('idSkill, input :>> ',  input);
         e.preventDefault();
         dispatch(updateSkill(idSkill, input));
         setInput({
@@ -52,7 +54,7 @@ const FormUpdateSkill = ({ idSkill }) => {
         <div
             className="modal fade"
             id="skillModal"
-            tabIndex="-1"
+            tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
         >
@@ -150,4 +152,4 @@ const FormUpdateSkill = ({ idSkill }) => {
     )
 }
 
-export default FormUpdateSkill
+export default FormUpdateSkill;

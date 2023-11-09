@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { allProjects, deleteProject, projectById } from "../../../store/actions/projects";
+import { allProjects, deleteProject } from "../../../store/actions/projects";
 import FormProjectUpdate from "./FormProjectUpdate";
 import { toast } from "react-toastify";
 import SERVER from "../../../server/index"
