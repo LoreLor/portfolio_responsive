@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { skillById, updateSkill } from '../../../store/actions/skills';
+import { toast } from 'react-toastify';
 
 
-const FormUpdateSkill = ({idSkill}) => {
+const FormUpdateSkill = ({ idSkill }) => {
     const dispatch = useDispatch();
     const detail = useSelector(state => state.skills.detailSkill);
     const [input, setInput] = useState({
@@ -13,10 +15,37 @@ const FormUpdateSkill = ({idSkill}) => {
 
     useEffect(() => {
         if(idSkill){
-            dispatch()
+            dispatch(skillById(idSkill));
         }
-    })
+    }, [dispatch, idSkill]);
 
+    useEffect(() => {
+        setInput({
+            name: input.name || "",
+            image: input.image || "",
+        })
+    }, [detail]);
+
+    const handleChange = (e) => {
+        setInput({
+            ...input,
+            [e.target.name]:e.target.value
+        })
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(updateSkill(idSkill, input));
+        setInput({
+            name:"",
+            image:""
+        });
+        toast.success('Skill Updated Successfully', {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose:1500,
+            theme: 'colored'
+        });
+    };
 
 
     return (
@@ -73,6 +102,8 @@ const FormUpdateSkill = ({idSkill}) => {
                                                             id="name"
                                                             className="form-control"
                                                             required
+                                                            value={input.name}
+                                                            onChange={handleChange}
                                                         />
                                                         <label
                                                             className="labelform"
@@ -86,6 +117,8 @@ const FormUpdateSkill = ({idSkill}) => {
                                                             id="image"
                                                             className="form-control"
                                                             required
+                                                            value={input.image}
+                                                            onChange={handleChange}
                                                         />
                                                     </div>
                                                     <div
@@ -98,6 +131,7 @@ const FormUpdateSkill = ({idSkill}) => {
                                                         <button
                                                             type="submit"
                                                             className="btn btn-ligth"
+                                                            onClick={handleSubmit}
                                                         >
                                                             SAVE
                                                         </button>
