@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logoL2 from "../../assets/images/logo-L2-rem.png";
+import logoL2 from "../../assets/logo-L2-rem.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faHome, faUser, faScrewdriverWrench, faFolderOpen, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import s from "./Navbar.module.css";

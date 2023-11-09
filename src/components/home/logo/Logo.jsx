@@ -1,5 +1,5 @@
 import React from "react";
-import LogoL from "../../../assets/images/woman_coding.png";
+import LogoL from "../../../assets/woman_coding.png";
 import "./Logo.scss";
 
 const Logo = () => {
