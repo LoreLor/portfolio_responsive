@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
-import yo from "../../assets/images/yo-transparente.png";
-import pdf from "../../assets/images/resume-cv-2023.pdf";
+import yo from "../../assets/yo-transparente.png";
+import pdf from "../../assets/resume-cv-2023.pdf";
 import s from "./About.module.css";
 import "../animatedLetters/AnimatedLetters.scss";
 

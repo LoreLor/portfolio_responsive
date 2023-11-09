@@ -114,8 +114,16 @@
     margin-bottom: 8px;
 }
 
+.modal {
+    --bs-modal-bg: none;
+    --bs-modal-border-width: none !important;
+}
 
 .modal-open{
     min-height: 100vh !important;
     overflow-y: visible !important;
+}
+
+.fade {
+    min-height: 100% !important;
 }
