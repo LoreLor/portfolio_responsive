@@ -26,9 +26,9 @@ export const addSkill = (skill) => async(dispatch) => {
     }
 };
 
-export const updateSkill = (id, body) => async(dispatch) => {
+export const updateSkill = (id, skill) => async(dispatch) => {
     try {
-        const data = await axios.put(`${URL_API}/skill/${id}`, body);
+        const {data} = await axios.put(`${URL_API}/skill/${id}`, skill);
         dispatch({
             type: PUT_SKILL,
             payload: data

@@ -65,6 +65,7 @@ const TableSkill = () => {
 
     // encuentro el skill por id
     const handleUpdateSkill = (idSkill) => {
+        console.log('idSkill: ', idSkill)
         setSelectedSkill(idSkill);
         setShowModal(true);
     };
