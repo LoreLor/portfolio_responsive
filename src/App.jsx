@@ -21,6 +21,7 @@ import "./index.css";
 import { Route, Routes } from "react-router";
 import Login from "./components/login/Login";
 import Dashboard from "./components/dashboard/Dashboard";
+import PrivateDashboard from "./components/dashboard/PrivateDashboard";
 
 function App() {
     const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function App() {
             <ToastContainer />
             <Routes>
                 <Route exact path="/login" element={<Login />} />
-                <Route path="/login/dashboard" element={<Dashboard />} />
+                <Route path="/login/dashboard" element={<PrivateDashboard><Dashboard /></PrivateDashboard>} />
                 <Route path="/"  element={
                         <>
                             {/* El contenido principal de tu aplicación */}
