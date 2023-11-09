@@ -17,7 +17,7 @@ const TableProject = () => {
       const [selectedProject, setSelectedproject] = useState(null);
       
       const [delProject, setDelProject] = useState(null);
-      const [show, setShow] = useState(false);
+      const [showModal, setShowModal] = useState(false);
 
       const [inputs, setInputs] = useState({
           name: "",
@@ -61,7 +61,7 @@ const TableProject = () => {
                   github: "",
                 });
                 dispatch(allProjects());
-                setShow(false);
+                setShowModal(false);
               }
           } catch (error) {
               toast.error(console.log(error), {
@@ -78,7 +78,7 @@ const TableProject = () => {
       const handleUpdateProject = (id) => {
         //console.log('id :>> ', id);
         setSelectedproject(id);
-        setShow(true);
+        setShowModal(true);
       }
 
       // Delete Project
@@ -88,7 +88,7 @@ const TableProject = () => {
             await dispatch(deleteProject(id));
             dispatch(allProjects())
             setDelProject(id);
-            setShow(false);
+            setShowModal(false);
             toast.success(<p>Project Deleted successful</p>, {
               position: toast.POSITION.TOP_CENTER,
               autoClose:2000,
@@ -106,7 +106,7 @@ const TableProject = () => {
       
       // Handle Modal
       const handleCloseModal = () => {
-        setOpenModal(false);
+        setShowModal(false);
       }
 
       useEffect(() => {
@@ -213,7 +213,7 @@ const TableProject = () => {
                                                       </svg>
                                                     </button>
                                                     <FormProjectUpdate 
-                                                        showModal={show}
+                                                        showModal={showModal}
                                                         handleCloseModal={handleCloseModal}
                                                         id={selectedProject}
                                                       />
