@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { signin } from "../../store/actions/user";
+import { getUser, signin } from "../../store/actions/user";
 import axios from "axios";
-import SERVER from '../../server/index';
+import SERVER from "../../server/index";
 import { ToastContainer, toast } from "react-toastify";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import s from "./Login.module.css";
-
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -21,51 +20,65 @@ const Login = () => {
         password: "",
     });
 
-
     const handleChange = (e) => {
         setInput({
-          ...input,
-          [e.target.name] : e.target.value
-        })
+            ...input,
+            [e.target.name]: e.target.value,
+        });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (Object.keys(input).length === 2 
-        && input.email !== "" 
-        && input.password !== "") {
-          let response = null;
-          try {
-              response = await axios.post(`${SERVER}/user/signin`, input);
-              if(response.data.message === 'Login Success'){
-                  dispatch(signin(input));
+        if (
+            Object.keys(input).length === 2 &&
+            input.email !== "" &&
+            input.password !== ""
+        ) {
+            let response = null;
+            try {
+                response = await axios.post(`${SERVER}/user/signin`, input);
+                if (response.data.message === "Login Success") {
+                    dispatch(signin(input));
 
-                  toast.success(`${response.data.message}`), {
-                      position: toast.POSITION.TOP_CENTER,
-                      autoClose: 2000,
-                      theme:'colored'
-                  };
+                    toast.success(`${response.data.message}`),
+                        {
+                            position: toast.POSITION.TOP_CENTER,
+                            autoClose: 2000,
+                            theme: "colored",
+                        };
 
-                  setInput({
-                    email: "",
-                    password:"",
-                  });
+                    setInput({
+                        email: "",
+                        password: "",
+                    });
 
-                  setTimeout(() => {
-                      navigate('/login/dashboard');
-                  }, 3500)
-              }
-          } catch (error) {
-            toast.error(<div>Invalid email or Password</div>, {
-              position: toast.POSITION.TOP_CENTER,
-              autoClose: 5000,
-              theme: 'colored'
-          })
+                    setTimeout(() => {
+                        navigate("/login/dashboard");
+                    }, 3500);
+                }
+            } catch (error) {
+                toast.error(<div>Invalid email or Password</div>, {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 5000,
+                    theme: "colored",
+                });
+            }
         }
-      }
     };
 
+    useEffect(() => {
+        dispatch(getUser());
+    }, [dispatch]);
 
+    useEffect(() => {
+        if (user.token) navigate("/dashboard");
+    }, [navigate, user.token]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLetterClass("text-animate-hover");
+        }, 3500);
+    }, []);
 
     return (
         <div className={`container ${s.signin_page}`}>
