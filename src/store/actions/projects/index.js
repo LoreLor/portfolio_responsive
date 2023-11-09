@@ -29,7 +29,7 @@ export const projectById = (id) => async(dispatch) => {
 
 export const addProject = (project) => async(dispatch) => {
     try {
-        const data= await axios.post(`${URL_API_URL}/project`, project);
+        const data= await axios.post(`${URL_API}/project`, project);
         dispatch({
             type: POST_PROJECT,
         })

@@ -99,7 +99,7 @@ const Skills = () => {
                     </h2>
                 </div>
                 <div className={`container ${s.skill_container}`}>
-                    <div className="row row-cols-md-4 row-cols-lg-5 g-3 align-content-center justify-content-center align-items-center">
+                    <div className="row row-cols-md-4 row-cols-lg-6 g-3 align-content-center justify-content-center align-items-center">
                         {
                             skills && skills.map((s) => (
                                 <div className="col" key={s.name}>
