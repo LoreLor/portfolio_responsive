@@ -39,9 +39,8 @@ export const signin = (email, password) => async(dispatch) => {
     }
 };
 
-export const signout = () => {
+export const signout = () => async(dispatch) => {
     dispatch({
         type: SIGNOUT_USER,
     });
-    window.localStorage.clear();
 }
