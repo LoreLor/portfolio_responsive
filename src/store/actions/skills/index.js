@@ -43,7 +43,7 @@ export const skillById = (id) => async (dispatch) => {
         const { data } = await axios.get(`${URL_API}/skill/${id}`);
         dispatch({
             type: GET_BY_ID,
-            payload: data
+            payload: data.response
         })
     } catch (error) {
         console.log(error);
