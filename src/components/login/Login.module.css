@@ -12,6 +12,7 @@
 
 .signin_page {
     position: relative;
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -82,7 +83,7 @@
 
 input[type="email"],
 input[type="password"] {
-    width: 100%;
+    width: 50vw;
     border: none ;
     height: 40px;
     font-size: 16px;
@@ -90,7 +91,6 @@ input[type="password"] {
     color: #040f16;
     padding: 0 20px;
     box-sizing: border-box;
-    border-radius: 6px;
 }
 
 .flat_button {
@@ -148,6 +148,6 @@ input[type="password"] {
 
 @media screen and (min-width:1024px){
     .signin_form {
-        width: 60%;
+        width: 80%;
     }
 }
