@@ -12,7 +12,11 @@
 
 .signin_page {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .signin_page::before {
@@ -22,8 +26,8 @@
     font-size:1.2rem;
     position: absolute;
     opacity: 0.6;
-    left: 2rem;
-    top: 0;
+    left: 0;
+    top: 2rem;
     animation: fadeIn 2s 1.7s backwards;
     transition: var(--transition);
 }
