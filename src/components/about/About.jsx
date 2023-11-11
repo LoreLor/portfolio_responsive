@@ -13,13 +13,13 @@ const About = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const aboutSection = document.getElementById("about");
-            if (!aboutSection) return;
+            const homeSection = document.getElementById("home");
+            if (!homeSection) return;
             // devuelve el tamaño del elemento y su posicion relativa
-            const rect = aboutSection.getBoundingClientRect();
+            const rect = homeSection.getBoundingClientRect();
 
             // Verifica si la parte superior de la sección está en el campo de visión
-            if (rect.top <= window.innerHeight * 0.4) {
+            if (rect.top <= window.innerHeight * 0) {
                 setAnimateTitle(true);
             } else {
                 setAnimateTitle(false);
