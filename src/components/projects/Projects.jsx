@@ -4,7 +4,8 @@ import CardProject from "./card_project/CardProject";
 import { allProjects } from "../../store/actions/projects";
 import AnimatedLetters from "../animatedLetters/AnimatedLetters";
 import s from './Projects.module.css';
-import { Fragment } from "react";
+import Loader from "react-loaders";
+
 
 
 
@@ -16,9 +17,11 @@ const Projects = () => {
    
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         dispatch(allProjects());
+        setIsLoading(false);
     }, []);
 
     useEffect(() => {
@@ -46,53 +49,57 @@ const Projects = () => {
 
     return (
         <>
-            <div className={`container ${s.projects_page}`} id="projects">
-                {/* Animacion del Titulo */}
-                <div className={s.projects_text}>
-                    <h2>
-                    {
-                        animateTitle ? 
-                        (<AnimatedLetters
-                            letterClass={letterClass}
-                            strArray={[
-                                "M",
-                                "Y",
-                                " ",
-                                "P",
-                                "R",
-                                "O",
-                                "J",
-                                "E",
-                                "C",
-                                "T",
-                                "S",
-                            ]}
-                            idx={15}
-                        />) : (null)
-                    }
-                    </h2>
-                    {/* Cards de Proyectos */}
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">
-                        { projects && projects.map((p, index) => {
-                            return (
-                                <div className="col" key={p.name} data-aos={index % 2 === 0 ? 'fade-up' : 'fade-down'}>
-                                    <CardProject
-                                        name={p.name} 
-                                        image={p.image}
-                                        description={p.description} 
-                                        stack={p.stack}
-                                        deploy={p.deploy}
-                                        demo={p.demo}
-                                        github={p.github}
-                                    />
-                                </div>
-                            )
-                        }) 
+        {
+            isLoading ? (
+                <Loader type="line-scale" color='#f78324'/>
+            ): (
+                <div className={`container ${s.projects_page}`} id="projects">
+                    {/* Animacion del Titulo */}
+                    <div className={s.projects_text}>
+                        <h2>
+                        {
+                            animateTitle ? 
+                            (<AnimatedLetters
+                                letterClass={letterClass}
+                                strArray={[
+                                    "M",
+                                    "Y",
+                                    " ",
+                                    "P",
+                                    "R",
+                                    "O",
+                                    "J",
+                                    "E",
+                                    "C",
+                                    "T",
+                                    "S",
+                                ]}
+                                idx={15}
+                            />) : (null)
                         }
+                        </h2>
+                        {/* Cards de Proyectos */}
+                        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">
+                            { projects && projects.map((p, index) => {
+                                return (
+                                    <div className="col" key={p.name} data-aos={index % 2 === 0 ? 'fade-up' : 'fade-down'}>
+                                        <CardProject
+                                            name={p.name} 
+                                            image={p.image}
+                                            description={p.description} 
+                                            stack={p.stack}
+                                            deploy={p.deploy}
+                                            demo={p.demo}
+                                            github={p.github}
+                                        />
+                                    </div>
+                                )
+                            }) 
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+            )}     
         </>
     );
 };
