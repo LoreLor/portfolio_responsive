@@ -19,7 +19,9 @@ const Projects = () => {
 
     useEffect(() => {
         dispatch(allProjects());
-        setIsLoading(false);
+        if (projects){
+            setIsLoading(false);
+        }
     }, []);
 
     useEffect(() => {
