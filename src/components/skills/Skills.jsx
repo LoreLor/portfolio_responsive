@@ -109,8 +109,8 @@ const Skills = () => {
                             <div className={`container ${s.skill_container}`}>
                                 <div className="row row-cols-md-4 row-cols-lg-6 g-3 align-content-center justify-content-center align-items-center">
                                     {
-                                        skills && skills.map((s) => (
-                                            <div className="col" key={s.name}>
+                                        skills && skills.map((s, index) => (
+                                            <div className="col" key={s.name} data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}>
                                                 <CardSkill
                                                     name={s.name}
                                                     image={s.image}

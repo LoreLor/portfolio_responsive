@@ -9,8 +9,6 @@ import Loader from "react-loaders";
 
 
 
-
-
 const Projects = () => {
     const dispatch = useDispatch();
     const projects = useSelector(state => state.projects.projects)
