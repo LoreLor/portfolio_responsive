@@ -41,11 +41,10 @@ const Skills = () => {
     }, []);
 
     useEffect(() => {
-        dispatch(allSkills());
-        if(skills){
+        if(skills.length > 0){
             setIsLoading(false);
         }
-    }, []);
+    }, [skills]);
 
 
     // Efecto tilt de la card

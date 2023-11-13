@@ -17,12 +17,7 @@ const Projects = () => {
     const [animateTitle, setAnimateTitle] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        dispatch(allProjects());
-        if (projects){
-            setIsLoading(false);
-        }
-    }, []);
+    
 
     useEffect(() => {
         const handleScroll = () => {
@@ -45,6 +40,12 @@ const Projects = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        if (projects.length > 0) {
+            setIsLoading(false);
+        }
+    }, [projects]);
 
 
     return (
