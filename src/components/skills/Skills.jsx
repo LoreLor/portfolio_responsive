@@ -7,17 +7,13 @@ import { allSkills } from "../../store/actions/skills";
 import s from "./Skills.module.css";
 import Loader from "react-loaders";
 
-
-
-
 const Skills = () => {
     const dispatch = useDispatch();
-    const skills = useSelector(state => state.skills.skills)
-    
+    const skills = useSelector((state) => state.skills.skills);
+
     const [letterClass, setLetterClass] = useState("text-animate");
     const [animateTitle, setAnimateTitle] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-
 
     // Efecto animatedLetter de los titulos
     useEffect(() => {
@@ -41,23 +37,22 @@ const Skills = () => {
     }, []);
 
     useEffect(() => {
-        if(skills.length > 0){
+        if (skills.length > 0) {
             setIsLoading(false);
         }
     }, [skills]);
 
-
     // Efecto tilt de la card
     useEffect(() => {
         const wrapper = document.querySelectorAll(".wrapper");
-        
+
         if (wrapper) {
             Array.from(wrapper).forEach((wrapp) => {
                 VanillaTilt.init(wrapp, {
                     max: 25,
                     speed: 400,
-                    startX:-10,
-                    startY:-8,
+                    startX: -10,
+                    startY: -8,
                     glare: true,
                     "max-glare": 0.5,
                 });
@@ -73,59 +68,59 @@ const Skills = () => {
         }
     }, [skills]);
 
-    
-
-
-
     return (
         <>
-            {
-                isLoading ? (
-                    <Loader type="line-scale" color='#f78324'/>
-                ) : (
-                    <section id="skills">
-                        <div className={`container ${s.skills_page}`}>
-                            <div className={s.skill_text}>
-                                <h2>
-                                    {animateTitle ? (
-                                        <AnimatedLetters
-                                            letterClass={letterClass}
-                                            strArray={[
-                                                "M",
-                                                "Y",
-                                                " ",
-                                                "S",
-                                                "K",
-                                                "I",
-                                                "L",
-                                                "L",
-                                                "S",
-                                            ]}
-                                            idx={15}
-                                        />
-                                    ) : null}
-                                </h2>
-                            </div>
-                            <div className={`container ${s.skill_container}`}>
-                                <div className="row row-cols-md-4 row-cols-lg-6 g-3 align-content-center justify-content-center align-items-center">
-                                    {
-                                        skills && skills.map((s, index) => (
-                                            <div className="col" key={s.name} data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}>
-                                                <CardSkill
-                                                    name={s.name}
-                                                    image={s.image}
-                                                    className="wrapper"
-                                                />
-                                            </div>
-                                        ))
-                                    }
-                                    
-                                </div>
+            <section id="skills">
+                <div className={`container ${s.skills_page}`}>
+                    <div className={s.skill_text}>
+                        <h2>
+                            {animateTitle ? (
+                                <AnimatedLetters
+                                    letterClass={letterClass}
+                                    strArray={[
+                                        "M",
+                                        "Y",
+                                        " ",
+                                        "S",
+                                        "K",
+                                        "I",
+                                        "L",
+                                        "L",
+                                        "S",
+                                    ]}
+                                    idx={15}
+                                />
+                            ) : null}
+                        </h2>
+                    </div>
+                    {isLoading ? (
+                        <Loader type="line-scale" color="#f78324" />
+                    ) : (
+                        <div className={`container ${s.skill_container}`}>
+                            <div className="row row-cols-md-4 row-cols-lg-6 g-3 align-content-center justify-content-center align-items-center">
+                                {skills &&
+                                    skills.map((s, index) => (
+                                        <div
+                                            className="col"
+                                            key={s.name}
+                                            data-aos={
+                                                index % 2 === 0
+                                                    ? "fade-left"
+                                                    : "fade-right"
+                                            }
+                                        >
+                                            <CardSkill
+                                                name={s.name}
+                                                image={s.image}
+                                                className="wrapper"
+                                            />
+                                        </div>
+                                    ))}
                             </div>
                         </div>
-                    </section>
-                )
-            }
+                    )}
+                </div>
+            </section>
         </>
     );
 };

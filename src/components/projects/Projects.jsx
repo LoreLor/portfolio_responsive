@@ -50,10 +50,7 @@ const Projects = () => {
 
     return (
         <>
-        {
-            isLoading ? (
-                <Loader type="line-scale" color='#f78324'/>
-            ): (
+        
                 <div className={`container ${s.projects_page}`} id="projects">
                     {/* Animacion del Titulo */}
                     <div className={s.projects_text}>
@@ -80,27 +77,31 @@ const Projects = () => {
                         }
                         </h2>
                         {/* Cards de Proyectos */}
-                        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">
-                            { projects && projects.map((p, index) => {
-                                return (
-                                    <div className="col" key={p.name} data-aos={index % 2 === 0 ? 'fade-up' : 'fade-down'}>
-                                        <CardProject
-                                            name={p.name} 
-                                            image={p.image}
-                                            description={p.description} 
-                                            stack={p.stack}
-                                            deploy={p.deploy}
-                                            demo={p.demo}
-                                            github={p.github}
-                                        />
-                                    </div>
-                                )
-                            }) 
-                            }
-                        </div>
+                        {
+                        isLoading ? (
+                            <Loader type="line-scale" color='#f78324'/>
+                        ): (
+                            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-align-content-center justify-content-center align-items-center mt-2">
+                                { projects && projects.map((p, index) => {
+                                    return (
+                                        <div className="col" key={p.name} data-aos={index % 2 === 0 ? 'fade-up' : 'fade-down'}>
+                                            <CardProject
+                                                name={p.name} 
+                                                image={p.image}
+                                                description={p.description} 
+                                                stack={p.stack}
+                                                deploy={p.deploy}
+                                                demo={p.demo}
+                                                github={p.github}
+                                            />
+                                        </div>
+                                        )
+                                    }) 
+                                }
+                            </div>
+                        )}     
                     </div>
                 </div>
-            )}     
         </>
     );
 };
