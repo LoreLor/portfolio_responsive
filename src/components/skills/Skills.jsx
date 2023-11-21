@@ -102,21 +102,19 @@ const Skills = () => {
                             <div className="row row-cols-md-4 row-cols-lg-6 g-3 align-content-center justify-content-center align-items-center">
                                 {skills &&
                                     skills.map((s, index) => (
-                                        <div
-                                            className="col"
-                                        >
+                                    
                                             <CardSkill
                                                 key={s.name}
                                                 name={s.name}
                                                 image={s.image}
-                                                className="wrapper"
+                                                className="col wrapper"
                                                 // data-aos={
                                                 //     index % 2 === 0
                                                 //         ? "fade-left"
                                                 //         : "fade-right"
                                                 // }
                                             />
-                                        </div>
+                
                                     ))}
                             </div>
                         </div>
