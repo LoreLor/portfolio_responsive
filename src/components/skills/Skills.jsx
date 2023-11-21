@@ -102,17 +102,17 @@ const Skills = () => {
                                     skills.map((s, index) => (
                                         <div
                                             className="col"
-                                            key={s.name}
-                                            data-aos={
-                                                index % 2 === 0
-                                                    ? "fade-left"
-                                                    : "fade-right"
-                                            }
                                         >
                                             <CardSkill
+                                                key={s.name}
                                                 name={s.name}
                                                 image={s.image}
                                                 className="wrapper"
+                                                data-aos={
+                                                    index % 2 === 0
+                                                        ? "fade-left"
+                                                        : "fade-right"
+                                                }
                                             />
                                         </div>
                                     ))}
