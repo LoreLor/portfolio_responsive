@@ -42,11 +42,13 @@ const Skills = () => {
         }
     }, [skills]);
 
+    
+
     // Efecto tilt de la card
     useEffect(() => {
         const wrapper = document.querySelectorAll(".wrapper");
 
-        if (wrapper) {
+        if (wrapper.length) {
             Array.from(wrapper).forEach((wrapp) => {
                 VanillaTilt.init(wrapp, {
                     max: 25,
@@ -108,11 +110,11 @@ const Skills = () => {
                                                 name={s.name}
                                                 image={s.image}
                                                 className="wrapper"
-                                                data-aos={
-                                                    index % 2 === 0
-                                                        ? "fade-left"
-                                                        : "fade-right"
-                                                }
+                                                // data-aos={
+                                                //     index % 2 === 0
+                                                //         ? "fade-left"
+                                                //         : "fade-right"
+                                                // }
                                             />
                                         </div>
                                     ))}
