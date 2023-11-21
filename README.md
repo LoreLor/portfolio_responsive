@@ -6,4 +6,5 @@
 
 Stack: React-Vite, Redux, Bootstrap, CSS, HTML, AOS, JS, Node.js, Express, Sequelize, PostgreSQL.-
 
-https://lorena-de-armas.netlify.app
+Deploy: https://lorena-de-armas.netlify.app
+  
