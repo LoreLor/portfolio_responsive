@@ -44,10 +44,10 @@ const Skills = () => {
 
     // Efecto tilt de la card
     useEffect(() => {
-        const wrapper = document.querySelectorAll(".wrapper");
+        const wrappers = document.querySelectorAll(".wrapper");
 
-        if (wrapper) {
-            Array.from(wrapper).forEach((wrapp) => {
+        if (wrappers) {
+            Array.from(wrappers).forEach((wrapp) => {
                 VanillaTilt.init(wrapp, {
                     max: 25,
                     speed: 400,
@@ -59,7 +59,7 @@ const Skills = () => {
             });
 
             return () => {
-                Array.from(wrapper).forEach((wrapp) => {
+                Array.from(wrappers).forEach((wrapp) => {
                     if (wrapp.VanillaTilt) {
                         wrapp.VanillaTilt.destroy();
                     }
