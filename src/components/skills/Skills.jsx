@@ -42,13 +42,11 @@ const Skills = () => {
         }
     }, [skills]);
 
-    
-
     // Efecto tilt de la card
     useEffect(() => {
         const wrapper = document.querySelectorAll(".wrapper");
 
-        if (wrapper.length) {
+        if (wrapper) {
             Array.from(wrapper).forEach((wrapp) => {
                 VanillaTilt.init(wrapp, {
                     max: 25,
@@ -102,19 +100,21 @@ const Skills = () => {
                             <div className="row row-cols-md-4 row-cols-lg-6 g-3 align-content-center justify-content-center align-items-center">
                                 {skills &&
                                     skills.map((s, index) => (
-                                    
+                                        <div
+                                            className="col"
+                                            key={s.name}
+                                            data-aos={
+                                                index % 2 === 0
+                                                    ? "fade-left"
+                                                    : "fade-right"
+                                            }
+                                        >
                                             <CardSkill
-                                                key={s.name}
                                                 name={s.name}
                                                 image={s.image}
-                                                className="col wrapper"
-                                                // data-aos={
-                                                //     index % 2 === 0
-                                                //         ? "fade-left"
-                                                //         : "fade-right"
-                                                // }
+                                                className="wrapper"
                                             />
-                
+                                        </div>
                                     ))}
                             </div>
                         </div>
