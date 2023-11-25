@@ -101,9 +101,23 @@
     color: rgb(5, 245, 245);
 }
 
+@media screen and (min-width:425px){
+    .projects-item {
+        width: 80%;
+        margin:0 auto;
+    }
+}
+
+@media screen and (min-width:425px){
+    .projects-item {
+        width: 100%;
+    }
+}
+
 
 @media screen and (min-width: 1024px) {
     .projects-item{
+        width: 100%;
         height: 30rem;
     }
 }
